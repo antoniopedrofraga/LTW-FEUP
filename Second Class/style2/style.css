@@ -1,0 +1,140 @@
+html, body
+{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body 
+{
+	width: 950px;
+	margin-right: 20%;
+	margin-left: 40px;
+	margin-top: 0px;
+	overflow: auto;
+}
+
+html,body:before{
+	content: " ";
+    display: block;
+    background: url(stripe.png);
+    float:left;
+    background-repeat: repeat-y;
+    margin: 0px;
+}
+
+#header {
+	/*some text font*/
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-family: ;
+    padding: 1px;
+    padding-left: 10px;
+  }
+
+#header h1 {
+	margin-top: 0.67em;
+	margin-bottom: 0.15em;
+}
+
+#header h2 {
+	/*another text font*/
+	margin-top: 0.15em;
+	margin-bottom: 0.67em;
+}
+
+#menu ul{
+  	list-style-type: none;
+  	padding-left: 10px;
+  	margin-top: 0px;
+  	margin-bottom: 10px;
+  	background-color: #333333;
+  	padding:10px;
+}
+
+#menu ul li {
+	display: inline;
+}
+
+#menu ul {
+	padding: 10px 10px;
+	margin: 0;
+}
+#menu ul li {
+	display: inline;
+	background-color: white;
+	padding: 1px;
+	margin-right:8px;
+}
+#menu ul li a {
+	padding: 1px 8px;
+	color: black;
+	text-decoration: none;
+}
+
+
+#content .news-item {
+  background-color: white;
+  padding: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: auto;
+  width: 820px;
+}
+
+#content .news-item h3 {
+	color: black;
+	font-weight: bold;
+	font-size: 30px;
+	padding: 1px;
+}
+
+#content .news-item img {
+	padding: 1px;
+	display: block;
+	float: right;
+	padding-left: 10px;
+}
+
+#content .news-item h3 {
+	margin-top: 5px;
+	margin-bottom: 1px;
+	padding: 1px;
+}
+
+
+#content .news-item ul {
+	padding: 10px 0px;
+	margin: 0;
+	background-color: #333333;
+	margin-top: 0;			/*unsucessfull try to remove default padding, not a priority*/
+	margin-bottom: 0;
+} 
+#content .news-item ul li {
+	display: inline;
+	padding: 1px;
+	padding-left: 8px;
+
+}
+
+#content .news-item ul li a {
+	padding: 1px 8px;
+	color: white;
+	text-decoration: none;
+}
+
+#content .news-item .introduction {
+	font-style: italic;
+	/*some text font here*/
+}
+
+#content .news-item p a:link {
+	text-decoration: none;
+	color: red;
+	/*some text font here*/
+}
+
+
+
