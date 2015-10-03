@@ -38,14 +38,14 @@ body
 
 #tabs li div {
 	z-index: -1;
-	position: fixed;
-    top: 0;
-    right: 0;
+    top: 100px;
+    position: absolute;
+    width: 800px;
+    text-align: center;
 }
 
 #welcome {
 	z-index: 0;
-	position: fixed;
     top: 0;
     right: 0;
     background-color: gray;
@@ -59,7 +59,7 @@ body
     min-height: 800px;
     border-style: solid;
 	border-color: orange;
-	border-radius: 10px 10px 10px 10px;
+	border-radius: 10px 20px 10px 10px;
 	border-width: 1px;
     z-index: 0;
 }
