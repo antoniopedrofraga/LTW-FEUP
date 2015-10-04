@@ -63,3 +63,8 @@ body
 	border-width: 1px;
     z-index: 0;
 }
+
+
+#tabs #h1 a:checked {
+    color: white;
+}
