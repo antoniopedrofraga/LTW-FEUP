@@ -37,18 +37,20 @@ body
 }
 
 #tabs li div {
-	z-index: -1;
+	visibility: hidden;
     top: 100px;
     position: absolute;
-    width: 800px;
     text-align: center;
+    width: 850px;
+
 }
 
-#welcome {
+#wellcome {
 	z-index: 0;
-    top: 0;
-    right: 0;
-    background-color: gray;
+    top: 300px;
+    position: absolute;
+    text-align: center;
+   	width: 850px;
 }
 
 #tabs:after {
@@ -59,12 +61,12 @@ body
     min-height: 800px;
     border-style: solid;
 	border-color: orange;
-	border-radius: 10px 20px 10px 10px;
+	border-radius: 10px 10px 10px 10px;
 	border-width: 1px;
     z-index: 0;
 }
 
 
-#tabs #h1 a:checked {
-    color: white;
+#tabs #h1 a:active ~ #tabs #h1 div{
+    visibility: visible;
 }
