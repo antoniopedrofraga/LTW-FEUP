@@ -83,14 +83,6 @@ body
 
 /* falta só fazer :hover, :active em #tabs li*/
 
-#h1:target div{
-    display: block;
-}
-
-#h2:target div{
-    display: block;
-}
-
-#h3:target div{
+#tabs li:target div{
     display: block;
 }
