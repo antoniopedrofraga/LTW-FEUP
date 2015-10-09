@@ -27,6 +27,15 @@ body
 	border-color: orange;
 	border-radius: 10px 20px 10px 10px;
 	border-width: 1px;
+	position:relative;
+	z-index: 0;
+}
+
+#tabs li:target
+{
+	position: relative;
+	border-bottom: 0;
+	z-index: 2;
 }
 
 #tabs li a {
@@ -34,7 +43,6 @@ body
 	padding: 1px 8px;
 	color: black;
 	text-decoration: none;
-	pointer-events: auto;
 }
 
 #tabs li div {
@@ -43,16 +51,21 @@ body
     position: absolute;
     text-align: center;
     width: 800px;
-    padding-left: 25px;
+    padding-left: 30px;
+	margin-left: 1px;
+	background-color: gray;
 
 }
 
 #wellcome {
-	z-index: 0;
-    top: 300px;
+    top: 150px;
     position: absolute;
+	padding-left: 25px;
+	margin-left: 1px;
     text-align: center;
-   	width: 850px;
+   	width: 800px;
+	z-index: 0;
+	background-color: gray;
 }
 
 #tabs:after {
@@ -65,8 +78,10 @@ body
 	border-color: orange;
 	border-radius: 10px 10px 10px 10px;
 	border-width: 1px;
-    z-index: 0;
+	position:relative;
 }
+
+/* falta só fazer :hover, :active em #tabs li*/
 
 #h1:target div{
     display: block;
