@@ -38,7 +38,7 @@ body
 }
 
 #tabs li div {
-	visibility: hidden;
+	display: none;
     top: 100px;
     position: absolute;
     text-align: center;
@@ -68,14 +68,14 @@ body
     z-index: 0;
 }
 
-#h1 a:active + div{
-    visibility: visible;
+#h1:target div{
+    display: block;
 }
 
-#h2 a:active + div{
-    visibility: visible;
+#h2:target div{
+    display: block;
 }
 
-#h3 a:active + div{
-    visibility: visible;
+#h3:target div{
+    display: block;
 }
