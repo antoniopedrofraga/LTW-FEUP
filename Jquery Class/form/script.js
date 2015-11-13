@@ -16,9 +16,7 @@ firstTagChild = function(element) {
 
 firstTagChild = function(element, tagName) {
 	
-	var string = '#' + element;
-	
-	var nodes = $(string).children();
+	var nodes = document.getElementById(element).childNodes;
 	
 	for(var i = 0; i < nodes.length; i++)
 		if(nodes[i].tagName == tagName)
