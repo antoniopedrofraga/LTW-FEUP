@@ -29,6 +29,10 @@ body #info {
 	margin: auto;
 }
 
+.tableElement {
+	padding: 20px;
+}
+
 
 td{
 	text-align: center;
