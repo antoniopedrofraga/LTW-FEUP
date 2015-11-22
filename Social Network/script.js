@@ -1,18 +1,42 @@
-var products = ['ABCD', 'DEFG'];
-
 
 
 document.getElementById('signup').onclick = function() {
 
-   var firstName = document.getElementById('firstName').value;
-	
-	if (firstName == "") {
-		swal({   title: "Are you sure?",   text: "You will not be able to recover this imaginary file!",   type: "warning",   showCancelButton: true,   confirmButtonColor: "#DD6B55",   confirmButtonText: "Yes, delete it!",   closeOnConfirm: false }, function(){   swal("Deleted!", "Your imaginary file has been deleted.", "success"); });
-	} else {
-		sweetAlert("Oops...", "You must write your name at the 'First Name' field in order to sign up!" + firstName, "error");
-	}
+   var firstName = document.getElementById('firstName');
+   var lastName = document.getElementById('lastName');
+   var email = document.getElementById('email');
+   var password = document.getElementById('password');
+   var repeatPassword = document.getElementById('repeatPassword');
+
+   var elements = [firstName, lastName, email, password, repeatPassword];
+
+   for (index in elements) {
+
+   		if(elements[index].value == '') {
+   			onError(elements[index]);
+   			return;
+   		} else {
+   			onOk(elements[index]);
+   		}
+   		
+   }
+
+   if(password.value != repeatPassword.value) {
+   		swal("Oops...", "Your new passwords doesn't match!", "error");
+   }
 
 };
+
+
+function onError(element) {
+	element.style.borderColor = 'red';
+	element.style.backgroundColor = '#FFDEDE';
+}
+
+function onOk(element) {
+	element.style.borderColor = '#E2E2E2';
+	element.style.backgroundColor = 'white';
+}
 
 
 

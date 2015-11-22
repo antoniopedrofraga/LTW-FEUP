@@ -131,7 +131,7 @@ input[type="button"]{
 	transition: box-shadow 0.3s, border 0.3s,color 0.5s,background-color 0.5s;
 }
 
-input[type="button"]:hover{
+input[type="button"]:hover {
 	border: solid 1px #707070;
   	box-shadow: 0 0 5px 1px #FFFFFF;
   	color:#467373;
@@ -139,11 +139,11 @@ input[type="button"]:hover{
   	cursor: pointer;
 }
 
-header input[type="button"]{
+header input[type="button"] {
 	color:#467373;
   	background-color:white;
   	cursor: pointer;
-	}
+}
 
 .lado{
 	height:20px;
