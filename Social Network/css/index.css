@@ -20,7 +20,8 @@ header{
 	box-shadow: 0 -5px 30px 1px #000000;
 
 }
-header input[name="fname"]{
+
+.signinTextBox {
 	background-color: #FFFFFF;
 	border: 1px solid #E2E2E2;
 	font-size: 12px;
@@ -35,11 +36,12 @@ header input[name="fname"]{
   	transition: box-shadow 0.3s, border 0.3s;
 }
 
-header input[name="fname"]:focus {
+.signinTextBox:focus {
   	border: solid 1px #707070;
   	box-shadow: 0 0 5px 1px #969696;
 }
-header input[type="submit"]{
+
+header input[type="button"]{
 	margin-left:20px;
 }
 
@@ -98,7 +100,7 @@ h3{
 	color:white;
 }
 
-input[name="fname"]{
+.signupTextBox{
 	background-color: #FFFFFF;
 	border: 1px solid #E2E2E2;
 	border-radius: 5px 0px 5px 0px;
@@ -113,12 +115,12 @@ input[name="fname"]{
 	height:27px;
 	}
 
-input[name="fname"]:focus {
+.signupTextBox:focus {
   	border: solid 1px #707070;
   	box-shadow: 0 0 5px 1px #969696;
 }
 
-input[type="submit"]{
+input[type="button"]{
 	border-radius: 5px 0px 5px 0px;
 	background-color:#172626;
 	border: solid 1px #FFFFFF;
@@ -129,16 +131,18 @@ input[type="submit"]{
 	transition: box-shadow 0.3s, border 0.3s,color 0.5s,background-color 0.5s;
 }
 
-input[type="submit"]:hover{
+input[type="button"]:hover{
 	border: solid 1px #707070;
   	box-shadow: 0 0 5px 1px #FFFFFF;
   	color:#467373;
   	background-color:white;
+  	cursor: pointer;
 }
 
-header input[type="submit"]{
+header input[type="button"]{
 	color:#467373;
   	background-color:white;
+  	cursor: pointer;
 	}
 
 .lado{
