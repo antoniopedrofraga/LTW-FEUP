@@ -1,5 +1,31 @@
 
 
+document.getElementById('sinbtn').onclick = function() {
+
+   var email = document.getElementById('signinEmail');
+   var password = document.getElementById('signinPassword');
+
+   var script = $.getJSON("./getUsers.php");
+
+   script.done(function(data) {
+      for(index in data) {
+         if(data[index].email == email.value && data[index].password == password.value) {
+            swal("Done", "Loged in!", "success");
+            return;
+         }
+      }
+      swal("Oops...", "There is not a user registed with that e-mail and password...", "error");
+   });
+
+   script.fail(function() {
+    swal("Oops...", "Error getting users from database..", "error");
+   });
+
+};
+
+
+
+
 document.getElementById('signup').onclick = function() {
 
    var firstName = document.getElementById('firstName');
@@ -37,6 +63,10 @@ document.getElementById('signup').onclick = function() {
       addUser(new User(firstName.value, lastName.value, email.value, password.value));
 	});
 
+   script.fail(function() {
+    swal("Oops...", "Error getting users from database..", "error");
+   });
+
 };
 
 function onError(element) {
@@ -51,10 +81,21 @@ function onOk(element) {
 
 
 function addUser(user) {
-    $.get('addUser.php', {user : $(this).val()}, function(data) {
-        //swal("Good job!", "You are now registed!", "success");
-        console.log(data);
-    });
+
+   var userPost = $.post("./addUser.php", { firstName: user.firstName, lastName: user.lastName, email: user.email, password: user.password} );
+
+   userPost.done(function(data) { 
+
+      if (data == 'true') {
+         swal("Done", "Thank you for sign up!", "success");
+      }
+
+   });
+
+   userPost.fail(function() {
+    swal("Oops...", "Error adding a user to the database..", "error");
+   });
+
 }
 
 

@@ -1,3 +1,4 @@
+
 <?php 
 $db = new PDO('sqlite:./database/database.db'); 
 $stmt = $db->prepare('SELECT * FROM user'); 
