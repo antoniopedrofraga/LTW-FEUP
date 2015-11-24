@@ -1,6 +1,6 @@
 <?php 
 
-$db = new PDO('sqlite:./database/database.db'); 
+$db = new PDO('sqlite:../database/database.db'); 
 
 $firstName = $_POST["firstName"];
 $lastName = $_POST["lastName"];

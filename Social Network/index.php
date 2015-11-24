@@ -1,3 +1,11 @@
+/*<?php 
+session_start();
+if(isset($_SESSION["email"])) {
+    header('Location: ./pages/feed.php');
+    die();
+}
+?>*/
+
 <!doctype html>
 <html>
 	<head>
@@ -10,6 +18,7 @@
     <title>Wired In</title> <!-- Color: #172626 -->
  </head>
 
+
 	<header>
 
 		<div class="logo">
@@ -18,10 +27,10 @@
 
 		<h1><a href="./index.html">Wired In</a></h1>
 		
-    <form action="#" method="SignIn" id="sin">
-          		Email&nbsp&nbsp<input type="text" class="signinTextBox" id='signinEmail'/>
-          		&nbsp&nbspPassword&nbsp&nbsp<input type="password" class="signinTextBox" id='signinPassword'/>
-          		<input type="button" name="LogIn" value="Log In" id='sinbtn'>
+    <form action="./pages/feed.php" method="post" id="sin">
+          		Email&nbsp&nbsp<input type="text" name='email' class="signinTextBox" id='signinEmail'/>
+          		&nbsp&nbspPassword&nbsp&nbsp<input type="password" name='password' class="signinTextBox" id='signinPassword'/>
+          		<input type="submit" name="LogIn" value="Log In" id='sinbtn'>
     </form>
 
 	</header>
@@ -45,13 +54,13 @@
       				<td width="50%" valign="top" class="hey">
    						<br></br>
         				<h2>Join us!</h2>
-	        				<form action="#" method="POST" class="branco">
+	        				<form action="./pages/feed.php" method="post" id="sup">
           						<input type="text" class="signupTextBox" id="firstName" size="25" placeholder="First Name" class="sidebyside"/>
           						<input type="text" class="signupTextBox" id="lastName" size="25" placeholder="Last Name" class="sidebyside"/><br /><br />
-          						<input type="text" class="signupTextBox" id="email" size="25" placeholder="E-mail" /> <br /><br />
-         				  		<input type="password" class="signupTextBox" id="password" size="25" placeholder="Password" /> <br />
+          						<input type="text" class="signupTextBox" name="email" id="email" size="25" placeholder="E-mail" /> <br /><br />
+         				  		<input type="password" class="signupTextBox" name="password" id="password" size="25" placeholder="Password" /> <br />
           						<input type="password" class="signupTextBox" id="repeatPassword" size="25" placeholder="Repeat your password" /><br /> <br />
-     					 		<input type="button" name="submit" value="Sign Up" id="signup">
+     					 		    <input type="submit" name="SignUp" value="Sign Up" id="signup">
        						</form>
  				 	</td>
 			 	</tr>

@@ -5,22 +5,37 @@ document.getElementById('sinbtn').onclick = function() {
    var email = document.getElementById('signinEmail');
    var password = document.getElementById('signinPassword');
 
-   var script = $.getJSON("./getUsers.php");
+   var elements = [email, password];
+
+   for (index in elements) {
+
+      if(elements[index].value == '') {
+         onError(elements[index]);
+         return false;
+      } else {
+         onOk(elements[index]);
+      }
+
+   }
+
+   var script = $.post("./actions/getUsers.php", {email: email.value, password: password.value});
 
    script.done(function(data) {
-      for(index in data) {
-         if(data[index].email == email.value && data[index].password == password.value) {
-            swal("Done", "Loged in!", "success");
-            return;
-         }
+      
+      if(data == 'true') {
+            var sin = document.getElementById('sin');
+            sin.submit();
+            return true;
       }
-      swal("Oops...", "There is not a user registed with that e-mail and password...", "error");
+
+      swal("Oops...", "There is not a user registed with that e-mail and password..." + data, "error");
    });
 
    script.fail(function() {
-    swal("Oops...", "Error getting users from database..", "error");
+      swal("Oops...", "Error getting users from database..", "error");
    });
 
+   return false;
 };
 
 
@@ -40,7 +55,7 @@ document.getElementById('signup').onclick = function() {
 
    		if(elements[index].value == '') {
    			onError(elements[index]);
-   			return;
+   			return false;
    		} else {
    			onOk(elements[index]);
    		}
@@ -49,23 +64,29 @@ document.getElementById('signup').onclick = function() {
 
    if(password.value != repeatPassword.value) {
    		swal("Oops...", "Your new passwords doesn't match!", "error");
+         return false;
    }
 
-   var script = $.getJSON("./getUsers.php");
+   var script = $.post("./actions/getUsers.php", {email: email.value, password: password.value});
 
-	script.done(function(data) {
-    	for(index in data) {
-         if(data[index].email == email.value) {
-            swal("Oops...", "There is a user registed with that e-mail..", "error");
-            return;
-         }
+   script.done(function(data) {
+      
+      if(data == 'true') {
+            swal("Oops...", "There is a user registed with that e-mail and password...", "error");
+      } else {
+
+         if (addUser(new User(firstName.value, lastName.value, email.value, password.value)) == true)
+            return true;
+
       }
-      addUser(new User(firstName.value, lastName.value, email.value, password.value));
-	});
+
+   });
 
    script.fail(function() {
-    swal("Oops...", "Error getting users from database..", "error");
+      swal("Oops...", "Error getting users from database..", "error");
    });
+
+   return false;
 
 };
 
@@ -82,19 +103,25 @@ function onOk(element) {
 
 function addUser(user) {
 
-   var userPost = $.post("./addUser.php", { firstName: user.firstName, lastName: user.lastName, email: user.email, password: user.password} );
+   var userPost = $.post("./actions/addUser.php", { firstName: user.firstName, lastName: user.lastName, email: user.email, password: user.password} );
 
    userPost.done(function(data) { 
-
-      if (data == 'true') {
-         swal("Done", "Thank you for sign up!", "success");
+      
+      if(data != 'true') {
+         swal("Oops...", "Error adding a user to the database..", "error");
+      } else {
+         var sup = document.getElementById('sup');
+         sup.submit();
+         return true;
       }
 
    });
 
    userPost.fail(function() {
-    swal("Oops...", "Error adding a user to the database..", "error");
+      swal("Oops...", "Error adding a user to the database..", "error");
    });
+
+   return false;
 
 }
 

@@ -41,7 +41,7 @@ header{
   	box-shadow: 0 0 5px 1px #969696;
 }
 
-header input[type="button"]{
+header input[type="submit"]{
 	margin-left:20px;
 }
 
@@ -120,7 +120,7 @@ h3{
   	box-shadow: 0 0 5px 1px #969696;
 }
 
-input[type="button"]{
+input[type="submit"]{
 	border-radius: 5px 0px 5px 0px;
 	background-color:#172626;
 	border: solid 1px #FFFFFF;
@@ -131,7 +131,7 @@ input[type="button"]{
 	transition: box-shadow 0.3s, border 0.3s,color 0.5s,background-color 0.5s;
 }
 
-input[type="button"]:hover {
+input[type="submit"]:hover {
 	border: solid 1px #707070;
   	box-shadow: 0 0 5px 1px #FFFFFF;
   	color:#467373;
@@ -139,7 +139,7 @@ input[type="button"]:hover {
   	cursor: pointer;
 }
 
-header input[type="button"] {
+header input[type="submit"] {
 	color:#467373;
   	background-color:white;
   	cursor: pointer;
@@ -153,9 +153,6 @@ header input[type="button"] {
 	margin: 0px auto 0px auto;
 }
 
-.branco{
-	opacity: 0.9;
-}
 
 .hey{
 	border-bottom:1px solid white;
