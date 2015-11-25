@@ -43,13 +43,28 @@ if(!isset($_SESSION["email"])) {
 			<div id="eventfeed">
 				<form action="../actions/createEvent.php" id="eventForm" method="post">
 					<input type="text" id="eventTextBox" placeholder="Create an event..." autocomplete="off"/>
-					<input type="submit" value="Create Event" id="teste">
+					<input type="submit" value="Create" id="crtEvent">
+					<select id="privacy" class="dropdown">
+  						<option value="public">Public</option>
+  						<option value="private">Private</option>
+					</select>
+
+					<select id="type" class="dropdown">
+						<option class="header" value="" disabled>Formal</option>
+						<option class="options" value="" selected>Conference</option>
+  						<option class="options" value="conference" selected>Conference</option>
+  						<option class="options" value="party">Party</option>
+  						<option class="options" value="concert">Concert</option>
+  						<option class="header" value="" disabled>Informal</option>
+  						<option class="options" value="workshop">Workshop</option>
+					</select>
 				</form>
+
 			</div>
 		</body>
 
   		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-  		<script type="text/javascript" src="feedScript.js"></script>
+  		
 		<!--using sweet alert-->
  		<script src="../sweetalert/dist/sweetalert.min.js"></script> <link rel="stylesheet" type="text/css" href="../sweetalert/dist/sweetalert.css">
 
