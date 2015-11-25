@@ -145,6 +145,14 @@ header input[type="submit"] {
   	cursor: pointer;
 }
 
+header input[type="submit"]:hover {
+	border: solid 1px white;
+  	box-shadow: 0 0 5px 1px #172626;
+  	color: white;
+  	background-color:#172626;
+  	cursor: pointer;
+}
+
 .lado{
 	height:20px;
 	text-shadow: 1px 2px 2px #172626;

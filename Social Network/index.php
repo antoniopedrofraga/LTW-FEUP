@@ -1,10 +1,10 @@
-/*<?php 
+<?php 
 session_start();
 if(isset($_SESSION["email"])) {
     header('Location: ./pages/feed.php');
     die();
 }
-?>*/
+?>
 
 <!doctype html>
 <html>
@@ -25,7 +25,7 @@ if(isset($_SESSION["email"])) {
 			<img src="./res/images/logo.png">
 		</div>
 
-		<h1><a href="./index.html">Wired In</a></h1>
+		<h1><a href="./index.php">Wired In</a></h1>
 		
     <form action="./pages/feed.php" method="post" id="sin">
           		Email&nbsp&nbsp<input type="text" name='email' class="signinTextBox" id='signinEmail'/>
@@ -80,7 +80,7 @@ if(isset($_SESSION["email"])) {
     </div>
 
     <div class="buttons" id="cont">
-      <a href="./index.html">HOME</a>
+      <a href="./index.php">HOME</a>
       <a>|</a>
       <a target="_blank" href="https://github.com/pedrofraga/LTW-FEUP/tree/master/Social%20Network">SOURCE</a>
       <a>|</a>

@@ -1,0 +1,123 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
+}
+
+header{
+	height: 75px;
+	border-bottom: 0px;
+	padding-left: auto;
+	padding-right: auto;
+	min-width: 100%;
+	border-bottom-left-radius: 15%;
+	border-bottom-right-radius: 15%;
+	font-size: 20px;
+	background-color: rgba(250,250,250,0.9);
+	-webkit-box-shadow: 0 -5px 30px 1px #000000;
+	-moz-box-shadow: 0 -5px 30px 1px #000000;
+	box-shadow: 0 -5px 30px 1px #000000;
+	z-index: 1;
+	position: relative;
+}
+
+
+#loutForm {
+	font-size: 13px;
+	float:right;
+	padding-top: 20px;
+	padding-right:5%;
+}
+
+#user {
+	font-size: 15px;
+	color: #467373;
+}
+
+#lout{
+	border-radius: 5px 0px 5px 0px;
+	color:#467373;
+	border: solid 1px #172626;
+	background-color: rgba(250,250,250,0.9);
+	height:33px;
+	width:75px;
+	font-size: 15px;
+	cursor: pointer;
+  	margin-left:20px;
+	transition: box-shadow 0.3s, border 0.3s,color 0.5s,background-color 0.5s;
+}
+
+#lout:hover {
+	border: solid 1px white;
+  	box-shadow: 0 0 5px 1px #172626;
+  	color: white;
+  	background-color:#172626;
+  	cursor: pointer;
+}
+
+
+header h1 a:active{
+	text-decoration: none
+	color:#607D8B;
+}
+
+header h1 a{
+	color:#467373;
+	font-family: 'Droid Serif';
+	font-size: 40px;
+	float: left;
+	padding-top: 5px;
+	padding-top: 12px;
+	transition:color 0.5s;
+	text-decoration: none
+}
+
+#logo img{
+	margin: auto 25px;
+	float: left;
+	width: 75px;
+	height: 65px;
+	padding-top: 5px;
+	padding-left:5%;
+}
+
+
+body {
+	background-color:#2F4F4F;	
+}
+
+#eventfeed {
+	width: 700px;
+	height: 900px;
+	margin: auto;
+	background-color: #ddddff;
+	-webkit-box-shadow: 0 -5px 30px 1px #000000;
+	-moz-box-shadow: 0 -5px 30px 1px #000000;
+	box-shadow: 0 -5px 30px 1px #000000;
+	position: relative;
+}
+
+#eventForm {
+	padding: 50px;
+}
+
+#eventTextBox {
+	background-color: #FFFFFF;
+	border: 1px solid gray;
+	border-radius: 5px 0px 5px 0px;
+	-moz-border-radius: 5px 0px 5px 0px;
+	-webkit-border-radius: 5px 0px 5px 0px;
+  	transition: box-shadow 0.3s, border 0.3s;
+	font-size: 15px;
+	width: 600px;
+	margin-bottom: 3px;
+	margin-top: 3px;
+	outline: none;
+	height:27px;
+}
+
+#eventTextBox:focus {
+  	border: solid 1px #707070;
+  	box-shadow: 0 0 5px 1px #172626;
+}
