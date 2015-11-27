@@ -14,7 +14,7 @@ header{
 	border-bottom-left-radius: 15%;
 	border-bottom-right-radius: 15%;
 	font-size: 20px;
-	background-color: rgba(250,250,250,0.9);
+	background-color: rgba(25, 25, 25, 1);
 	-webkit-box-shadow: 0 -5px 30px 1px #000000;
 	-moz-box-shadow: 0 -5px 30px 1px #000000;
 	box-shadow: 0 -5px 30px 1px #000000;
@@ -32,13 +32,13 @@ header{
 
 #user {
 	font-size: 15px;
-	color: #467373;
+	color: #e66300;
 }
 
 #lout{
 	border-radius: 5px 0px 5px 0px;
-	color:#467373;
-	border: solid 1px #172626;
+	color:#e66300;
+	border: solid 1px #CC5200;
 	background-color: rgba(250,250,250,0.9);
 	height:33px;
 	width:75px;
@@ -50,20 +50,20 @@ header{
 
 #lout:hover {
 	border: solid 1px white;
-  	box-shadow: 0 0 5px 1px #172626;
+  	box-shadow: 0 0 5px 1px #e66300;
   	color: white;
-  	background-color:#172626;
+  	background-color:#e66300;
   	cursor: pointer;
 }
 
 
 header h1 a:active{
 	text-decoration: none
-	color:#607D8B;
+	color:#d46c16;
 }
 
 header h1 a{
-	color:#467373;
+	color:#e66300;
 	font-family: 'Droid Serif';
 	font-size: 40px;
 	float: left;
@@ -84,14 +84,14 @@ header h1 a{
 
 
 body {
-	background-color:#2F4F4F;	
+	background-color:#e66300;	
 }
 
 #eventfeed {
 	width: 60%;
 	height: 900px;
 	margin: auto;
-	background-color: #ddddff;
+	background-color: #999999;
 	-webkit-box-shadow: 0 -5px 30px 1px #000000;
 	-moz-box-shadow: 0 -5px 30px 1px #000000;
 	box-shadow: 0 -5px 30px 1px #000000;
@@ -121,13 +121,13 @@ body {
 
 #eventTextBox:focus {
   	border: solid 1px #707070;
-  	box-shadow: 0 0 5px 1px #172626;
+  	box-shadow: 0 0 5px 1px #e66300;
 }
 
 #crtEvent {
 	border-radius: 5px 0px 5px 0px;
-	color:#467373;
-	border: solid 1px #172626;
+	color:#e66300;
+	border: solid 1px #e66300;
 	background-color: rgba(250,250,250,0.9);
 	height:28px;
 	width:75px;
@@ -141,17 +141,17 @@ body {
 
 #crtEvent:hover {
 	border: solid 1px white;
-  	box-shadow: 0 0 5px 1px #172626;
+  	box-shadow: 0 0 5px 1px #e66300;
   	color: white;
-  	background-color:#172626;
+  	background-color:#e66300;
   	cursor: pointer;
 }
 
 
 .dropdown {
 	border-radius: 5px 0px 5px 0px;
-	color:#467373;
-	border: solid 1px #172626;
+	color:#e66300;
+	border: solid 1px #e66300;
 	background-color: rgba(250,250,250,0.9);
 	font-size: 15px;
 
@@ -177,5 +177,5 @@ select.dropdown option:focus {
 }
 
 #formal{
-	border-bottom:1px solid #172626;
+	border-bottom:1px solid #e66300;
 }

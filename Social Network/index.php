@@ -15,7 +15,7 @@ if(isset($_SESSION["email"])) {
     <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="./res/images/logo.png">
-    <title>Wired In</title> <!-- Color: #172626 -->
+    <title>Event Crasher</title> <!-- Color: #172626 -->
  </head>
 
 
@@ -25,7 +25,7 @@ if(isset($_SESSION["email"])) {
 			<img src="./res/images/logo.png">
 		</div>
 
-		<h1><a href="./index.php">Wired In</a></h1>
+		<h1><a href="./index.php">Event Crasher</a></h1>
 		
     <form action="./pages/feed.php" method="post" id="sin">
           		Email&nbsp&nbsp<input type="text" name='email' class="signinTextBox" id='signinEmail'/>
@@ -47,7 +47,7 @@ if(isset($_SESSION["email"])) {
         				<br></br>
                 <img src="./res/images/graduate.png" heigth="128px" width="128px">
                 <br></br>
-        			   <h3>Studying today, working tomorrow.</h3>
+        			   <h3>Plan it, share it, enjoy it.</h3>
       				</td>
             
 

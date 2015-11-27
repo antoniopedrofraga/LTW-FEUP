@@ -21,7 +21,7 @@ if(!isset($_SESSION["email"])) {
     		<link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
     		<link rel="stylesheet" type="text/css" href="../css/feed.css">
     		<link rel="shortcut icon" href="../res/images/logo.png">
-    		<title>Wired In</title> <!-- Color: #172626 -->
+    		<title>Event Crasher</title> <!-- Color: #172626 -->
  		</head>
 
  		<header>
@@ -30,7 +30,7 @@ if(!isset($_SESSION["email"])) {
 				<img src="../res/images/logo.png">
 			</div>
 
-			<h1><a href="../index.php">Wired In</a></h1>
+			<h1><a href="../index.php">Event Crasher</a></h1>
 
 			<form action="../actions/logout.php" id="loutForm">
 				<a id="user"><?php echo $_SESSION["email"]; ?></a>
