@@ -15,7 +15,7 @@ header{
 	border-bottom-left-radius: 15%;
 	border-bottom-right-radius: 15%;
 	font-size: 20px;
-	background-color: rgba(25, 25, 25, 1);
+	background-color: rgba(250,250,250,0.9);
 	-webkit-box-shadow: 0 -5px 30px 1px #000000;
 	box-shadow: 0 -5px 30px 1px #000000;
 
@@ -50,7 +50,6 @@ header input[type="submit"]{
 	float:right;
 	padding-top: 20px;
 	padding-right:5%;
-	color: #e66300;
 }
 
 h1 a:active{
@@ -59,7 +58,7 @@ h1 a:active{
 }
 
 h1 a{
-	color:#e66300;
+	color:#467373;
 	font-family: 'Droid Serif';
 	font-size: 40px;
 	float: left;
@@ -70,7 +69,7 @@ h1 a{
 }
 
 body{
-	background-color:#e66300;	
+	background-color:#2F4F4F;	
 }
 
 body td { 
@@ -124,7 +123,7 @@ h3{
 
 input[type="submit"]{
 	border-radius: 5px 0px 5px 0px;
-	background-color:#e66300;
+	background-color:#172626;
 	border: solid 1px #FFFFFF;
 	color:white;
 	height:33px;
@@ -136,22 +135,22 @@ input[type="submit"]{
 input[type="submit"]:hover {
 	border: solid 1px #707070;
   	box-shadow: 0 0 5px 1px #FFFFFF;
-  	color:#e66300;
+  	color:#467373;
   	background-color:white;
   	cursor: pointer;
 }
 
 header input[type="submit"] {
-	color:#e66300;
+	color:#467373;
   	background-color:white;
   	cursor: pointer;
 }
 
 header input[type="submit"]:hover {
 	border: solid 1px white;
-  	box-shadow: 0 0 5px 1px #e66300;
+  	box-shadow: 0 0 5px 1px #172626;
   	color: white;
-  	background-color:#e66300;
+  	background-color:#172626;
   	cursor: pointer;
 }
 
@@ -172,7 +171,7 @@ header input[type="submit"]:hover {
 footer{
 	margin-top: 325px;
 	height: 200px;
-	background-color: rgba(25, 25, 25, 1);
+	background-color: rgba(250,250,250,0.8);
 	-webkit-box-shadow: 0 -5px 30px 1px #000000;
 	box-shadow: 0 -5px 30px 1px #000000;
 }
@@ -180,7 +179,6 @@ footer{
 footer .title{
 	text-align: center;
 	padding-top:30px;
-	color:#e66300
 }
 
 footer .title a{
@@ -188,13 +186,11 @@ footer .title a{
 	padding-left: 20px;
 	padding-right:20px;
 	font-family: 'Montserrat', sans-serif;
-
 }
 
 footer .buttons{
 	text-align: center;
 	padding-bottom:30px;
-	
 }
 
 footer .buttons a{
@@ -203,9 +199,9 @@ footer .buttons a{
 	padding-left: 10px;
 	padding-right:10px;
 	text-decoration: none;
-	color:#e66300
+	color:black;
 }
 
 footer .buttons a:visited{
-	color:#e66300
+	color:black;
 }

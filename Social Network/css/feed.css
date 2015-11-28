@@ -2,7 +2,7 @@
 	margin: 0px;
 	padding: 0px;
 	font-family: 'Montserrat', sans-serif;
-	font-size: 15px;
+	font-size: 13px;
 }
 
 header{
@@ -14,7 +14,7 @@ header{
 	border-bottom-left-radius: 15%;
 	border-bottom-right-radius: 15%;
 	font-size: 20px;
-	background-color: rgba(25, 25, 25, 1);
+	background-color: rgba(250,250,250,0.9);
 	-webkit-box-shadow: 0 -5px 30px 1px #000000;
 	-moz-box-shadow: 0 -5px 30px 1px #000000;
 	box-shadow: 0 -5px 30px 1px #000000;
@@ -32,13 +32,13 @@ header{
 
 #user {
 	font-size: 15px;
-	color: #e66300;
+	color: #467373;
 }
 
 #lout{
 	border-radius: 5px 0px 5px 0px;
-	color:#e66300;
-	border: solid 1px #CC5200;
+	color:#467373;
+	border: solid 1px #172626;
 	background-color: rgba(250,250,250,0.9);
 	height:33px;
 	width:75px;
@@ -50,20 +50,20 @@ header{
 
 #lout:hover {
 	border: solid 1px white;
-  	box-shadow: 0 0 5px 1px #e66300;
+  	box-shadow: 0 0 5px 1px #172626;
   	color: white;
-  	background-color:#e66300;
+  	background-color:#172626;
   	cursor: pointer;
 }
 
 
 header h1 a:active{
 	text-decoration: none
-	color:#d46c16;
+	color:#607D8B;
 }
 
 header h1 a{
-	color:#e66300;
+	color:#467373;
 	font-family: 'Droid Serif';
 	font-size: 40px;
 	float: left;
@@ -84,14 +84,19 @@ header h1 a{
 
 
 body {
-	background-color:#e66300;	
+	background-color:#2F4F4F;	
 }
 
 #eventfeed {
 	width: 60%;
-	height: 900px;
 	margin: auto;
-	background-color: #999999;
+
+	border: 1px solid gray;
+	border-radius: 0px 0px 5px 5px;
+	-moz-border-radius: 0px 0px 5px 5px;
+	-webkit-border-radius: 0px 0px 5px 5px;
+
+	background-color: #ddddff;
 	-webkit-box-shadow: 0 -5px 30px 1px #000000;
 	-moz-box-shadow: 0 -5px 30px 1px #000000;
 	box-shadow: 0 -5px 30px 1px #000000;
@@ -121,13 +126,13 @@ body {
 
 #eventTextBox:focus {
   	border: solid 1px #707070;
-  	box-shadow: 0 0 5px 1px #e66300;
+  	box-shadow: 0 0 5px 1px #172626;
 }
 
 #crtEvent {
 	border-radius: 5px 0px 5px 0px;
-	color:#e66300;
-	border: solid 1px #e66300;
+	color:#467373;
+	border: solid 1px #172626;
 	background-color: rgba(250,250,250,0.9);
 	height:28px;
 	width:75px;
@@ -141,11 +146,12 @@ body {
 
 #crtEvent:hover {
 	border: solid 1px white;
-  	box-shadow: 0 0 5px 1px #e66300;
+  	box-shadow: 0 0 5px 1px #172626;
   	color: white;
-  	background-color:#e66300;
+  	background-color:#172626;
   	cursor: pointer;
 }
+
 
 
 #event-date {
@@ -155,6 +161,8 @@ body {
 	-moz-border-radius: 5px 0px 5px 0px;
 	-webkit-border-radius: 5px 0px 5px 0px;
 	color: #5E5951;
+	margin: 8px;
+	margin-top: 30px;
 }
 
  input[type="date"]:before {
@@ -175,7 +183,8 @@ body {
     /* Size and position */
     position: relative;
     width: 120px;
-    margin: 10px;
+    margin: 6px;
+    margin-top: 30px;
     padding: 3px;
 
     /* Styles */
@@ -227,6 +236,7 @@ body {
     /* Hiding */
     opacity: 0;
     pointer-events: none;
+    z-index: 1;
 }
 
 .dropdown-div .dropdown li a {
@@ -251,7 +261,7 @@ body {
 /* Hover state */
 
 .dropdown-div .dropdown li:hover a {
-    background: rgba(255,149,0,0.5);
+    background: rgba(0,105,26,0.5);
 }
 
 
@@ -283,4 +293,73 @@ body {
 .dropdown-div.active .dropdown {
     opacity: 1;
     pointer-events: auto;
+    z-index: 1;
+}
+
+
+.event {
+	width: 60%;
+	margin: auto;
+
+	margin-top:4%;
+	margin-bottom:4%;
+
+	border: 1px solid gray;
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+
+	background-color: #ddddff;
+	-webkit-box-shadow: 0 -5px 30px 1px #000000;
+	-moz-box-shadow: 0 -5px 30px 1px #000000;
+	box-shadow: 0 -5px 30px 1px #000000;
+	position: relative;
+}
+
+
+.event h1 {
+	margin: 2%;
+}
+
+.event .description {
+	margin: 2%;
+}
+
+
+footer{
+	margin-top: 8%;
+	height: 200px;
+	background-color: rgba(250,250,250,0.8);
+	-webkit-box-shadow: 0 -5px 30px 1px #000000;
+	box-shadow: 0 -5px 30px 1px #000000;
+}
+
+footer .title{
+	text-align: center;
+	padding-top:30px;
+}
+
+footer .title a{
+	font-size: 18px;
+	padding-left: 20px;
+	padding-right:20px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+footer .buttons{
+	text-align: center;
+	padding-bottom:30px;
+}
+
+footer .buttons a{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 12px;
+	padding-left: 10px;
+	padding-right:10px;
+	text-decoration: none;
+	color:black;
+}
+
+footer .buttons a:visited{
+	color:black;
 }

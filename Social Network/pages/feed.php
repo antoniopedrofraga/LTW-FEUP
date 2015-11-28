@@ -67,9 +67,49 @@ if(!isset($_SESSION["email"])) {
 					<input type="date" id="event-date" placeholder="Event Date">
 
 				</form>
-
 			</div>
+
+			<?php
+				$db = new PDO('sqlite:../database/database.db');
+				$stmt = $db->prepare('SELECT * FROM event');
+				$stmt->execute();  
+				$result = $stmt->fetchAll();
+  
+				foreach( $result as $row) {
+			?>
+			<div class="event">
+				<h1 class="eventType"> <?php echo $row["type"]; ?> </h1>
+				<br>
+				<br>
+				<a class="description"> <?php echo $row["description"]; ?> </a>
+				<br>
+			</div>
+
+			<?php } ?>
+
 		</body>
+
+		<footer>
+
+    		<div class="title" id="cont">
+      			<a>Info</a>
+   			</div>
+  
+    		<div class="title" id="cont">
+      			<a href="../index.html"><img src="../res/images/home.png" height="50" width="50"></a>
+      			<a target="_blank" href="https://github.com/pedrofraga05/LTW-FEUP/tree/master/Social%20Network"><img src="../res/images/git.png" height="50" width="50"></a>
+      			<a href="../about.html"><img src="../res/images/info.png" height="50" width="50"></a>
+    		</div>
+
+    		<div class="buttons" id="cont">
+      			<a href="../index.php">HOME</a>
+      			<a>|</a>
+      			<a target="_blank" href="https://github.com/pedrofraga/LTW-FEUP/tree/master/Social%20Network">SOURCE</a>
+      			<a>|</a>
+      			<a href="../about.html">ABOUT</a>
+    		</div>
+
+  		</footer>
 
   		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
