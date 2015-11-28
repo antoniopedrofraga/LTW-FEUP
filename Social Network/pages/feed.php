@@ -93,8 +93,8 @@ if(!isset($_SESSION["email"])) {
 						break;
 					}
 
-					$time = strtotime($row["createDate"]);
-					$crtDate = date('Y/m/d h:i:s', $time);
+					$crtDateTime = strtotime($row["createDate"]);
+					$crtDate = date('Y/m/d h:i:s', $crtDateTime);
 					$currDate = date('Y/m/d h:i:s', time());
 
 					$diff = abs(strtotime($currDate) - strtotime($crtDate));
@@ -112,11 +112,17 @@ if(!isset($_SESSION["email"])) {
 					} else {
 						$timeAgo = "Created today";
 					}
+
+					$eventDateTime = strtotime($row["createDate"]);
+					$eventDate = "At " . date('Y/m/d h:i:s', $eventDateTime);
+
 			?>
 			<div class="event">
 				<p><img class="icon" src=<?php echo $path ?> height="32" width="32">
 				<a class="eventType"> <?php echo $row["type"]; ?> </a>
 				<a class="createdTime"> <?php echo $timeAgo; ?> </a> </p>
+				<a class="eventDate"> <?php echo $eventDate; ?> </a>
+				
 				<br>
 				<div>
 					<a class="description"> <?php echo $row["description"]; ?> </a>

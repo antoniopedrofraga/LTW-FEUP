@@ -330,6 +330,10 @@ body {
 	margin: 2%;
 }
 
+.event .eventDate {
+	margin-left: 2%;
+}
+
 .event div {
 	text-align: center;
 	vertical-align: middle;
