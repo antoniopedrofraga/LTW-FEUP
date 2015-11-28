@@ -20,12 +20,14 @@ CREATE TABLE event (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	description VARCHAR,
 	type VARCHAR,
-	user INTEGER
+	user INTEGER,
+	createDate DATE,
+	eventDate DATE
 );
 
 
-INSERT INTO event VALUES (NULL, 'Uma descrição qualquer 1', 'party', 1);
+INSERT INTO event VALUES (NULL, 'Uma descrição qualquer 1', 'Party', 1, "2015-11-25 23:30:00", "2015-11-31 23:30:00");
 
-INSERT INTO event VALUES (NULL, 'Uma descrição qualquer 2', 'concert', 2);
+INSERT INTO event VALUES (NULL, 'Uma descrição qualquer 2', 'Concert', 2, "2015-11-23 23:30:00", "2015-11-31 23:30:00");
 
-INSERT INTO event VALUES (NULL, 'Uma descrição qualquer 3', 'conference', 3);
+INSERT INTO event VALUES (NULL, 'Uma descrição qualquer 3', 'Conference', 3, "2015-11-21 23:30:00", "2015-11-31 23:30:00");
