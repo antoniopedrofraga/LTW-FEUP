@@ -316,12 +316,28 @@ body {
 	position: relative;
 }
 
+.event .icon {
+	margin: 2%;
+	vertical-align: middle;
+}
 
-.event h1 {
+.event a {
+	margin-top: -10px;
+}
+
+
+.event .description {
 	margin: 2%;
 }
 
-.event .description {
+.event div {
+	text-align: center;
+	vertical-align: middle;
+	line-height: 90px;
+}
+
+.event .createdTime {
+	float: right;
 	margin: 2%;
 }
 

@@ -74,14 +74,53 @@ if(!isset($_SESSION["email"])) {
 				$stmt = $db->prepare('SELECT * FROM event');
 				$stmt->execute();  
 				$result = $stmt->fetchAll();
+
   
 				foreach( $result as $row) {
+
+					switch($row["type"]) {
+						case "Party":
+						$path = "../res/images/events/party.png";
+						break;
+						case "Conference":
+						$path = "../res/images/events/conference.png";
+						break;
+						case "Concert":
+						$path = "../res/images/events/concert.png";
+						break;
+						default:
+						$path = "";
+						break;
+					}
+
+					$time = strtotime($row["createDate"]);
+					$crtDate = date('Y/m/d h:i:s', $time);
+					$currDate = date('Y/m/d h:i:s', time());
+
+					$diff = abs(strtotime($currDate) - strtotime($crtDate));
+
+					$years = floor($diff / (365*60*60*24));
+					$months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+					$days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+
+					if($years > 0) {
+						$timeAgo = "Created ". $years . " years ago";
+					} else if ( $months > 0 ) {
+						$timeAgo = "Created ". $months . " months ago";
+					} else if ( $days > 0 ) {
+						$timeAgo = "Created ". $days . " days ago";
+					} else {
+						$timeAgo = "Created today";
+					}
 			?>
 			<div class="event">
-				<h1 class="eventType"> <?php echo $row["type"]; ?> </h1>
+				<p><img class="icon" src=<?php echo $path ?> height="32" width="32">
+				<a class="eventType"> <?php echo $row["type"]; ?> </a>
+				<a class="createdTime"> <?php echo $timeAgo; ?> </a> </p>
 				<br>
-				<br>
-				<a class="description"> <?php echo $row["description"]; ?> </a>
+				<div>
+					<a class="description"> <?php echo $row["description"]; ?> </a>
+				</div>
 				<br>
 			</div>
 
