@@ -116,8 +116,8 @@ if(!isset($_SESSION["email"])) {
 						$timeAgo = "Created today";
 					}
 
-					$eventDateTime = strtotime($row["createDate"]);
-					$eventHour = date('h:i:s', $eventDateTime);
+					$eventDateTime = strtotime($row["eventDate"]);
+					$eventHour = date('h:i', $eventDateTime);
 					$eventDate = date('d/m/Y', $eventDateTime);
 
 			?>
