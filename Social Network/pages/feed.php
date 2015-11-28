@@ -88,6 +88,9 @@ if(!isset($_SESSION["email"])) {
 						case "Concert":
 						$path = "../res/images/events/concert.png";
 						break;
+						case "Reunion":
+						$path = "../res/images/events/reunion.png";
+						break;
 						default:
 						$path = "";
 						break;
@@ -114,18 +117,25 @@ if(!isset($_SESSION["email"])) {
 					}
 
 					$eventDateTime = strtotime($row["createDate"]);
-					$eventDate = "At " . date('Y/m/d h:i:s', $eventDateTime);
+					$eventHour = date('h:i:s', $eventDateTime);
+					$eventDate = date('d/m/Y', $eventDateTime);
 
 			?>
 			<div class="event">
-				<p><img class="icon" src=<?php echo $path ?> height="32" width="32">
+				<p><img class="icon" src=<?php echo $path ?> height="64" width="64">
 				<a class="eventType"> <?php echo $row["type"]; ?> </a>
 				<a class="createdTime"> <?php echo $timeAgo; ?> </a> </p>
-				<a class="eventDate"> <?php echo $eventDate; ?> </a>
-				
 				<br>
-				<div>
-					<a class="description"> <?php echo $row["description"]; ?> </a>
+				<div class="eventDate">
+					<img class="icon" src="../res/images/events/calendar.png" height="24" width="24">
+					<a> <?php echo $eventDate; ?> </a>
+					<img class="icon" src="../res/images/events/clock.png" height="24" width="24">
+					<a> <?php echo $eventHour; ?> </a>
+				</div>
+				<br>
+				<div class="description">
+					<img class="icon" src="../res/images/info.png" height="32" width="32">
+					<a> <?php echo $row["description"]; ?> </a>
 				</div>
 				<br>
 			</div>

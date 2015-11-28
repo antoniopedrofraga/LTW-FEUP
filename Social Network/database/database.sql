@@ -31,3 +31,5 @@ INSERT INTO event VALUES (NULL, 'Uma descrição qualquer 1', 'Party', 1, "2015-
 INSERT INTO event VALUES (NULL, 'Uma descrição qualquer 2', 'Concert', 2, "2015-11-23 23:30:00", "2015-11-31 23:30:00");
 
 INSERT INTO event VALUES (NULL, 'Uma descrição qualquer 3', 'Conference', 3, "2015-11-21 23:30:00", "2015-11-31 23:30:00");
+
+INSERT INTO event VALUES (NULL, 'Uma descrição qualquer 3', 'Reunion', 2, "2015-11-19 23:30:00", "2015-11-31 23:30:00");
