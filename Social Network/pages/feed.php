@@ -42,28 +42,39 @@ if(!isset($_SESSION["email"])) {
 		<body>
 			<div id="eventfeed">
 				<form action="../actions/createEvent.php" id="eventForm" method="post">
-					<input type="text" id="eventTextBox" placeholder="Create an event..." autocomplete="off"/>
+					<input type="text" id="eventTextBox" placeholder="Say something about the new event..." autocomplete="off"/>
 					<input type="submit" value="Create" id="crtEvent">
-					<select id="privacy" class="dropdown">
-  						<option value="public">Public</option>
-  						<option value="private">Private</option>
-					</select>
+					
+					<div id="privacy-dd" class="dropdown-div" tabindex="1">
+						<span>Public</span>
+						<ul class="dropdown">
+							<li><a href="#">Private</a></li>
+							<li><a href="#">Public</a></li>
+						</ul>
+					</div>
 
-					<select id="type" class="dropdown">
-						<option class="header" value="" disabled>Formal</option>
-						<option class="options" value="" selected>Conference</option>
-  						<option class="options" value="conference" selected>Conference</option>
-  						<option class="options" value="party">Party</option>
-  						<option class="options" value="concert">Concert</option>
-  						<option class="header" value="" disabled>Informal</option>
-  						<option class="options" value="workshop">Workshop</option>
-					</select>
+					<div id="type-dd" class="dropdown-div" tabindex="1">
+						<span>Type</span>
+						<ul class="dropdown">
+							<li><a href="#">Conference</a></li>
+							<li><a href="#">Party</a></li>
+							<li><a href="#">Reunion</a></li>
+							<li><a href="#">Concert</a></li>
+							<li><a href="#">Other</a></li>
+						</ul>
+					</div>
+
+					<input type="date" id="event-date" placeholder="Event Date">
+
 				</form>
 
 			</div>
 		</body>
 
   		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+  		<script src="../libs/dropdown.js"></script>
+  		<script src="feedScript.js"></script>
   		
 		<!--using sweet alert-->
  		<script src="../sweetalert/dist/sweetalert.min.js"></script> <link rel="stylesheet" type="text/css" href="../sweetalert/dist/sweetalert.css">

@@ -124,7 +124,7 @@ h3{
 
 input[type="submit"]{
 	border-radius: 5px 0px 5px 0px;
-	background-color:#172626;
+	background-color:#e66300;
 	border: solid 1px #FFFFFF;
 	color:white;
 	height:33px;
@@ -149,9 +149,9 @@ header input[type="submit"] {
 
 header input[type="submit"]:hover {
 	border: solid 1px white;
-  	box-shadow: 0 0 5px 1px #172626;
+  	box-shadow: 0 0 5px 1px #e66300;
   	color: white;
-  	background-color:#172626;
+  	background-color:#e66300;
   	cursor: pointer;
 }
 
