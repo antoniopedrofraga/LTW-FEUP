@@ -68,12 +68,9 @@ if(isset($_SESSION["email"])) {
 	</body>
   <footer>
 
-    <div class="title" id="cont">
-      <a>Info</a>
-   </div>
   
     <div class="title" id="cont">
-      <a href="./index.html"><img src="./res/images/home.png" height="50" width="50"></a>
+      <a href="./index.php"><img src="./res/images/home.png" height="50" width="50"></a>
       <a target="_blank" href="https://github.com/pedrofraga05/LTW-FEUP/tree/master/Social%20Network"><img src="./res/images/git.png" height="50" width="50"></a>
       <a href="./about.html"><img src="./res/images/info.png" height="50" width="50"></a>
     </div>
