@@ -14,10 +14,10 @@ header{
 	border-bottom-left-radius: 15%;
 	border-bottom-right-radius: 15%;
 	font-size: 20px;
-	background-color: rgba(250,250,250,0.9);
+	background-color: #545454;
 	-webkit-box-shadow: 0 -5px 30px 1px #000000;
 	-moz-box-shadow: 0 -5px 30px 1px #000000;
-	box-shadow: 0 -5px 30px 1px #000000;
+	box-shadow: 0 -5px 50px 1px #000000;
 	z-index: 1;
 	position: relative;
 }
@@ -32,7 +32,7 @@ header{
 
 #user {
 	font-size: 15px;
-	color: #467373;
+	color: #6AE368;
 }
 
 #lout{
@@ -58,13 +58,13 @@ header{
 
 
 header h1 a:active{
-	text-decoration: none
+	text-decoration: none;
 	color:#607D8B;
 }
 
 header h1 a{
-	color:#467373;
-	font-family: 'Droid Serif';
+	color:#6ae368;
+	font-family: 'Arial Black';
 	font-size: 40px;
 	float: left;
 	padding-top: 5px;
@@ -76,7 +76,7 @@ header h1 a{
 #logo img{
 	margin: auto 25px;
 	float: left;
-	width: 75px;
+	width: 65px;
 	height: 65px;
 	padding-top: 5px;
 	padding-left:5%;
@@ -84,7 +84,7 @@ header h1 a{
 
 
 body {
-	background-color:#2F4F4F;	
+	background-color:#6AE368;	
 }
 
 #eventfeed {
@@ -351,7 +351,7 @@ body {
 footer{
 	margin-top: 8%;
 	height: 200px;
-	background-color: rgba(250,250,250,0.8);
+	background-color: #545454;
 	-webkit-box-shadow: 0 -5px 30px 1px #000000;
 	box-shadow: 0 -5px 30px 1px #000000;
 }

@@ -21,7 +21,7 @@ if(!isset($_SESSION["email"])) {
     		<link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
     		<link rel="stylesheet" type="text/css" href="../css/feed.css">
     		<link rel="shortcut icon" href="../res/images/logo.png">
-    		<title>Event Crasher</title> <!-- Color: #172626 -->
+    		<title>Crasher</title> <!-- Color: #172626 -->
  		</head>
 
  		<header>
@@ -30,7 +30,7 @@ if(!isset($_SESSION["email"])) {
 				<img src="../res/images/logo.png">
 			</div>
 
-			<h1><a href="../index.php">Event Crasher</a></h1>
+			<h1><a href="../index.php">Crasher</a></h1>
 
 			<form action="../actions/logout.php" id="loutForm">
 				<a id="user"><?php echo $_SESSION["email"]; ?></a>
@@ -64,7 +64,7 @@ if(!isset($_SESSION["email"])) {
 						</ul>
 					</div>
 
-					<input type="date" id="event-date" placeholder="Event Date">
+					<input type="date" id="event-date" placeholder="Date:">
 
 				</form>
 			</div>
