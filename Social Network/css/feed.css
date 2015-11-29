@@ -152,6 +152,28 @@ body {
   	cursor: pointer;
 }
 
+#addPhotos {
+	width: 120px;
+	padding: 3px;
+	border: solid 1px gray;
+	background-color: white;
+	border-radius: 5px 0px 5px 0px;
+	-moz-border-radius: 5px 0px 5px 0px;
+	-webkit-border-radius: 5px 0px 5px 0px;
+	color: #5E5951;
+	margin: 8px;
+	margin-top: 30px;
+	display: inline-block;
+}
+
+#addPhotos:hover {
+	cursor: pointer;
+}
+
+#fileToUpload {
+	display: none;
+}
+
 
 
 #event-date {
@@ -316,7 +338,7 @@ body {
 	position: relative;
 }
 
-.event .icon {
+.icon {
 	margin: 2%;
 	vertical-align: middle;
 }

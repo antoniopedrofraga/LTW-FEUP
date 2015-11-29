@@ -18,3 +18,14 @@ $(function() {
 		});
 
 });
+
+
+/*$('#test').on('click', function(event){
+
+	$("#fileToUpload").trigger('click');
+}*/
+
+
+document.getElementById('test').onclick = function() {
+	console.log("teste");
+}

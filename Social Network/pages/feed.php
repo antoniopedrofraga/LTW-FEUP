@@ -42,8 +42,9 @@ if(!isset($_SESSION["email"])) {
 		<body>
 			<div id="eventfeed">
 				<form action="../actions/createEvent.php" id="eventForm" method="post">
-					<input type="text" id="eventTextBox" placeholder="Say something about the new event..." autocomplete="off"/>
+					<input type="text" id="eventTextBox" placeholder="Say something about a new event..." autocomplete="off"/>
 					<input type="submit" value="Create" id="crtEvent">
+					
 					
 					<div id="privacy-dd" class="dropdown-div" tabindex="1">
 						<span>Public</span>
@@ -65,6 +66,13 @@ if(!isset($_SESSION["email"])) {
 					</div>
 
 					<input type="date" id="event-date" placeholder="Date:">
+					<a id="test">
+						<div id="addPhotos">
+							<img class="icon" src="../res/images/events/add-photo.png" width="24" height="24">
+							<a>Add photo</a>
+							<input type="file" name="fileToUpload" id="fileToUpload">
+						</div>
+					</a>
 
 				</form>
 			</div>
@@ -127,14 +135,14 @@ if(!isset($_SESSION["email"])) {
 				<a class="createdTime"> <?php echo $timeAgo; ?> </a> </p>
 				<br>
 				<div class="eventDate">
-					<img class="icon" src="../res/images/events/calendar.png" height="24" width="24">
+					<img class="icon" src="../res/images/events/calendar-dark.png" height="24" width="24">
 					<a> <?php echo $eventDate; ?> </a>
 					<img class="icon" src="../res/images/events/clock.png" height="24" width="24">
 					<a> <?php echo $eventHour; ?> </a>
 				</div>
 				<br>
 				<div class="description">
-					<img class="icon" src="../res/images/info.png" height="32" width="32">
+					<img class="icon" src="../res/images/info-dark.png" height="32" width="32">
 					<a> <?php echo $row["description"]; ?> </a>
 				</div>
 				<br>
