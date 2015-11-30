@@ -145,8 +145,7 @@ if(!isset($_SESSION["email"])) {
 
 			<div class="event">
 					<div class="background" style="background-image: url(<?php echo $imagePath ?>);">
-                                                <input type="button" class="details" value="More details">
-						<input type="button" class="going" value="GO">
+						<a class="going">Click to go<a>
 					</div>
 
 					<p><img class="icon" src=<?php echo $path ?> height="64" width="64">
@@ -190,7 +189,7 @@ if(!isset($_SESSION["email"])) {
 
   		</footer>
 
-  		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
   		<script src="../libs/dropdown.js"></script>
   		<script src="feedScript.js"></script>

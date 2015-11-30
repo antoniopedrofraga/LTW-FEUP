@@ -86,7 +86,7 @@ if(isset($_SESSION["email"])) {
   </footer>
 
   <script type="text/javascript" src="script.js"></script>
-  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   
   <!--using sweet alert-->
   <script src="./sweetalert/dist/sweetalert.min.js"></script> <link rel="stylesheet" type="text/css" href="./sweetalert/dist/sweetalert.css">

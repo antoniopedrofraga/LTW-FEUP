@@ -432,37 +432,55 @@ body {
   	position: absolute;
   	top: 0;
   	left: 0;
-  	opacity: 0.15; 
+  	opacity: 0.15;
   	background-size: cover;
 }
 
 .event .background:hover {
 	cursor: pointer;
-	opacity: 0.35;
+	opacity: 1;
+        
+}
+
+.event .background .details {
+        width: 50%;
+  	height: 100%;
+        background: white;
+        opacity: 0.7;
+        display: none;
+        float: left;
+        border: none;
 }
 
 .event .background .going {
-	visibility: hidden;
+        width: 50%;
+  	height: 100%;
+        background: white;
+        opacity: 0.7;
+        display: none;
+        float: right;
+        border:none;
+}
+
+.event .background:hover .details{
+	display: block;
+        cursor: pointer;
+}
+
+.event .background:hover .going{
+	display: block;
+        cursor: pointer;
 }
 
 
-.eventButtons {
-	width: 60%;
-	margin: auto;
-	margin-top: 1%;
-
-	border: 1px solid gray;
-	border-radius: 0px 0px 5px 5px;
-	-moz-border-radius: 0px 0px 5px 5px;
-	-webkit-border-radius: 0px 0px 5px 5px;
-
-	background-color: #ddddff;
-	-webkit-box-shadow: 0 -5px 30px 1px #000000;
-	-moz-box-shadow: 0 -5px 30px 1px #000000;
-	box-shadow: 0 -5px 30px 1px #000000;
-	position: relative;
-	min-width: 709px;
+.event .background:hover .details:hover{
+	opacity: 0.9;
 }
+
+.event .background:hover .going:hover{
+        opacity: 0.9;
+}
+
 
 footer{
 	margin-top: 8%;
