@@ -144,7 +144,8 @@ if(!isset($_SESSION["email"])) {
 			?>
 
 			<div class="event">
-					<div class="background" style="background-image: url(<?php echo $imagePath ?>); opacity: 0.15; background-size: cover;">
+					<div class="background" style="background-image: url(<?php echo $imagePath ?>);">
+						<a class="going">Click to go<a>
 					</div>
 
 					<p><img class="icon" src=<?php echo $path ?> height="64" width="64">

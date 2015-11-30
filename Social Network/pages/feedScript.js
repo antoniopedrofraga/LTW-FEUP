@@ -118,5 +118,15 @@ $('.add-photos').on('click', function(event){
 		}
   });
 
+/*
+ $(document).on('mousemove', function(e){
+    $('#triangle-isosceles').css({
+       display: inline;
+       left:  e.pageX,
+       top:   e.pageY
+    });
+});*/
+
+
 
 
