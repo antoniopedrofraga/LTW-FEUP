@@ -103,8 +103,12 @@ body {
 	position: relative;
 }
 
-#eventForm {
-	padding: 50px;
+.eventForm {
+	margin: 50px;
+}
+
+#file-to-upload {
+    visibility: hidden;
 }
 
 #eventTextBox {
@@ -115,16 +119,42 @@ body {
 	-webkit-border-radius: 5px 0px 5px 0px;
   	transition: box-shadow 0.3s, border 0.3s;
 	font-size: 15px;
-	width: 80%;
+	width: 70%;
+	margin: auto;
+	margin-bottom: 3px;
+	margin-top: 3px;
+	margin-left: 5%;
+	outline: none;
+	height:27px;
+	padding-left: 10px;
+	display: inline-block;
+}
+
+#eventTextBox:focus {
+  	border: solid 1px #707070;
+  	box-shadow: 0 0 5px 1px #172626;
+}
+
+
+#nameTextBox {
+	background-color: #FFFFFF;
+	border: 1px solid gray;
+	border-radius: 5px 0px 5px 0px;
+	-moz-border-radius: 5px 0px 5px 0px;
+	-webkit-border-radius: 5px 0px 5px 0px;
+  	transition: box-shadow 0.3s, border 0.3s;
+	font-size: 15px;
+	width: 20%;
 	margin: auto;
 	margin-bottom: 3px;
 	margin-top: 3px;
 	outline: none;
 	height:27px;
 	padding-left: 10px;
+	display: inline-block;
 }
 
-#eventTextBox:focus {
+#nameTextBox:focus {
   	border: solid 1px #707070;
   	box-shadow: 0 0 5px 1px #172626;
 }
@@ -138,9 +168,9 @@ body {
 	width:75px;
 	cursor: pointer;
 	transition: box-shadow 0.3s, border 0.3s,color 0.5s,background-color 0.5s;
-	float:right;
 	font-size: 13px;
 	margin-top: 5px;
+	display: inline-block;
 }
 
 
@@ -170,11 +200,21 @@ body {
 	cursor: pointer;
 }
 
-#fileToUpload {
-	display: none;
+#file-to-upload {
+	visibility: hidden;
 }
 
-
+#event-hour {
+	padding: 3px;
+	border: solid 1px gray;
+	border-radius: 5px 0px 5px 0px;
+	-moz-border-radius: 5px 0px 5px 0px;
+	-webkit-border-radius: 5px 0px 5px 0px;
+	color: #5E5951;
+	margin: 8px;
+	margin-top: 30px;
+	display: inline-block;
+}
 
 #event-date {
 	padding: 3px;
@@ -187,15 +227,17 @@ body {
 	margin-top: 30px;
 }
 
- input[type="date"]:before {
+.placeholder:before {
     content: attr(placeholder) !important;
     color: #aaa;
     margin-right: 0.5em;
  }
- input[type="date"]:focus:before,
- input[type="date"]:valid:before {
+
+.placeholder:focus:before,
+.placeholder:valid:before {
     content: "";
  }
+
 
 
 

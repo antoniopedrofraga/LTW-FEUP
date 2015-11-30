@@ -41,13 +41,14 @@ if(!isset($_SESSION["email"])) {
 
 		<body>
 			<div id="eventfeed">
-				<form action="../actions/createEvent.php" id="eventForm" method="post">
-					<input type="text" id="eventTextBox" placeholder="Say something about a new event..." autocomplete="off"/>
-					<input type="submit" value="Create" id="crtEvent">
-					
+				<form action="../actions/upload.php" class="eventForm" id="submit-upload" method="post" enctype="multipart/form-data">
+
+					<input type="text" name="name" id="nameTextBox" placeholder="Event Name" autocomplete="off"/>
+
+					<input type="text" name="description" id="eventTextBox" placeholder="Say something about a new event..." autocomplete="off"/>
 					
 					<div id="privacy-dd" class="dropdown-div" tabindex="1">
-						<span>Public</span>
+						<span id="privacy-span" name="privacySpan" >Public</span>
 						<ul class="dropdown">
 							<li><a href="#">Private</a></li>
 							<li><a href="#">Public</a></li>
@@ -55,7 +56,7 @@ if(!isset($_SESSION["email"])) {
 					</div>
 
 					<div id="type-dd" class="dropdown-div" tabindex="1">
-						<span>Type</span>
+						<span id="type-span" name="typeSpan">Type</span>
 						<ul class="dropdown">
 							<li><a href="#">Conference</a></li>
 							<li><a href="#">Party</a></li>
@@ -65,14 +66,20 @@ if(!isset($_SESSION["email"])) {
 						</ul>
 					</div>
 
-					<input type="date" id="event-date" placeholder="Date:">
-					<a id="test">
-						<div id="addPhotos">
-							<img class="icon" src="../res/images/events/add-photo.png" width="24" height="24">
-							<a>Add photo</a>
-							<input type="file" name="fileToUpload" id="fileToUpload">
-						</div>
-					</a>
+					<input type="date" class="placeholder" name="date" id="event-date" placeholder="Date:">
+					
+					<br>
+
+					<input type="time" class="placeholder" name="time" placeholder="Hour:" id="event-hour">
+
+					<div id="addPhotos" class="add-photos">
+							<img class="icon" src="../res/images/events/add-photo.png" width="20" height="20">
+							<a id="photo-text">Add photo</a>
+					</div>
+
+					<input type="file" name="file-to-upload" id="file-to-upload">
+
+					<input type="submit" value="Create" name="submit" id="crtEvent">
 
 				</form>
 			</div>

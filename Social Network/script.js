@@ -18,7 +18,7 @@ document.getElementById('sinbtn').onclick = function() {
 
    }
 
-   var script = $.post("./actions/getUsers.php", {email: email.value, password: password.value});
+   var script = $.post("./actions/getUsers.php",  {email: email.value, password: password.value});
 
    script.done(function(data) {
       
@@ -28,7 +28,7 @@ document.getElementById('sinbtn').onclick = function() {
             return true;
       }
 
-      swal("Oops...", "There is not a user registed with that e-mail and password..." + data, "error");
+      swal("Oops...", "There is not a user registed with that e-mail and password...", "error");
    });
 
    script.fail(function() {
