@@ -36,16 +36,25 @@ if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
 
 } else {
+
+	$date = $_POST["eventDate"];
+    $time = $_POST["eventTime"];
+    $finalDate = $date . " " . $time;
+	$currDate = date('Y/m/d h:i:s', time());
+
+	$diff = strtotime($finalDate) - strtotime($currDate);
+
+	if($diff < 0) {
+    		echo "Please create an event with an upcoming date... " . $diff;
+    		return;
+    }
+
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
     	$name = $_POST["eventName"];
     	$desc = $_POST["eventDescription"];
     	$privacy = $_POST["eventPrivacy"];
     	$type = $_POST["eventType"];
-    	$date = $_POST["eventDate"];
-    	$time = $_POST["eventTime"];
-    	$finalDate = $date . " " . $time;
     	$photoPath = basename($_FILES["fileToUpload"]["name"]);
-    	$currDate = date('Y/m/d h:i:s', time());
         
         try {
         	$db = new PDO('sqlite:../database/database.db');

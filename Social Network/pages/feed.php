@@ -62,7 +62,6 @@ if(!isset($_SESSION["email"])) {
 							<li><a href="#">Party</a></li>
 							<li><a href="#">Reunion</a></li>
 							<li><a href="#">Concert</a></li>
-							<li><a href="#">Other</a></li>
 						</ul>
 					</div>
 
@@ -86,7 +85,13 @@ if(!isset($_SESSION["email"])) {
 
 			<?php
 				$db = new PDO('sqlite:../database/database.db');
-				$stmt = $db->prepare('SELECT * FROM event');
+
+				$currDate = date('Y-m-d h:i:s', time());
+
+				$sqlCmd = "SELECT * FROM event WHERE eventDate > '" . $currDate . "' ORDER BY eventDate ASC";
+
+
+				$stmt = $db->prepare($sqlCmd);
 				$stmt->execute();  
 				$result = $stmt->fetchAll();
 
@@ -113,7 +118,6 @@ if(!isset($_SESSION["email"])) {
 
 					$crtDateTime = strtotime($row["createDate"]);
 					$crtDate = date('Y/m/d h:i:s', $crtDateTime);
-					$currDate = date('Y/m/d h:i:s', time());
 
 					$diff = abs(strtotime($currDate) - strtotime($crtDate));
 
