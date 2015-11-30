@@ -3,7 +3,7 @@ function DropDown(el) {
     this.dd = el;
     this.placeholder = this.dd.children('span');
     this.opts = this.dd.find('ul.dropdown > li');
-    this.val = '';
+    this.val = this.dd.children('span');
     this.index = -1;
     this.initEvents();
 }

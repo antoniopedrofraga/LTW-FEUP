@@ -58,27 +58,34 @@ document.getElementById('crtEvent').onclick = function() {
 		return false;
 	}
 
-	var sup = document.getElementById('submit-value');
-	sup.submit({privacySpan: document.getElementById('privacy-span').textContent});
-	return true;
+	var fd = new FormData();
+    var file_data = $('#file-to-upload')[0].files[0];
+
+    fd.append("fileToUpload", file_data);
+    fd.append("eventName", name.value);
+    fd.append("eventDescription", description.value);
+    fd.append("eventPrivacy", privacy);
+    fd.append("eventType", type.textContent);
+    fd.append("eventDate", date.value);
+    fd.append("eventTime", hour.value);
+
+	$.ajax({
+        url: '../actions/upload.php',
+        data: fd,
+        contentType: false,
+        processData: false,
+        type: 'POST',
+        success: function(data){
+        	if(data != 'true') {
+            	swal("Oops...", data, "error");
+        	} else {
+        		location.reload();
+        	}
+        }
+    });
+
+	return false;
 }
-
-$('#file-to-upload').bind('change', function() {
-
-  if (this.files[0].size > 5 * 1048576) {
-
-  		swal("Oops...", "You can not upload a file with more than 5 MB...", "error");
-  		document.getElementById('file-to-upload').value = "";
-
-  } else if (this.files[0].type != 'image/png' && this.files[0].type != 'image/jpeg' && this.files[0].type != 'image/gif' && this.files[0].type != 'image/jpg') {
-  		
-  		swal("Oops...", "You can only upload files with .GIF, .JPG, .JPEG, or .PNG extensions...", "error");
-  		document.getElementById('file-to-upload').value = "";
-
-  }
-
-});
-
 
 function onError(element) {
 	element.style.borderColor = 'red';

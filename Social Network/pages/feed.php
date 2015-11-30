@@ -41,7 +41,7 @@ if(!isset($_SESSION["email"])) {
 
 		<body>
 			<div id="eventfeed">
-				<form action="../actions/upload.php" class="eventForm" id="submit-upload" method="post" enctype="multipart/form-data">
+				<form action="" class="eventForm" id="submit-upload" method="post" enctype="multipart/form-data">
 
 					<input type="text" name="name" id="nameTextBox" placeholder="Event Name" autocomplete="off"/>
 
@@ -135,24 +135,32 @@ if(!isset($_SESSION["email"])) {
 					$eventHour = date('h:i', $eventDateTime);
 					$eventDate = date('d/m/Y', $eventDateTime);
 
+					$imagePath = "../upload/" . $row["photoPath"]
+
 			?>
+
 			<div class="event">
-				<p><img class="icon" src=<?php echo $path ?> height="64" width="64">
-				<a class="eventType"> <?php echo $row["type"]; ?> </a>
-				<a class="createdTime"> <?php echo $timeAgo; ?> </a> </p>
-				<br>
-				<div class="eventDate">
-					<img class="icon" src="../res/images/events/calendar-dark.png" height="24" width="24">
-					<a> <?php echo $eventDate; ?> </a>
-					<img class="icon" src="../res/images/events/clock.png" height="24" width="24">
-					<a> <?php echo $eventHour; ?> </a>
-				</div>
-				<br>
-				<div class="description">
-					<img class="icon" src="../res/images/info-dark.png" height="32" width="32">
-					<a> <?php echo $row["description"]; ?> </a>
-				</div>
-				<br>
+					<div class="background" style="background-image: url(<?php echo $imagePath ?>); opacity: 0.15; background-size: cover;">
+					</div>
+
+					<p><img class="icon" src=<?php echo $path ?> height="64" width="64">
+					<a class="eventType"> <?php echo $row["type"]; ?> </a>
+					<a class="createdTime"> <?php echo $timeAgo; ?> </a> </p>
+					<br>
+					<div class="eventDate">
+						<img class="icon" src="../res/images/events/calendar-dark.png" height="24" width="24">
+						<a> <?php echo $eventDate; ?> </a>
+						<img class="icon" src="../res/images/events/clock.png" height="24" width="24">
+						<a> <?php echo $eventHour; ?> </a>
+					</div>
+					<h1 class = "eventTitle"> <?php echo $row["name"]; ?></h1>
+					<br>
+					<br>
+					<div class="description">
+						<img class="icon" src="../res/images/info-dark.png" height="32" width="32">
+						<a> <?php echo $row["description"]; ?> </a>
+					</div>
+					<br>
 			</div>
 
 			<?php } ?>
