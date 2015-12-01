@@ -136,17 +136,17 @@ if(!isset($_SESSION["email"])) {
 					}
 
 					$eventDateTime = strtotime($row["eventDate"]);
-					$eventHour = date('h:i', $eventDateTime);
+					$eventHour = date('G:i', $eventDateTime);
 					$eventDate = date('d/m/Y', $eventDateTime);
 
-					$imagePath = "../upload/" . $row["photoPath"]
+					$imagePath = "../upload/" . $row["photoPath"];
 
 			?>
 
 			<div class="event">
 					<div class="background" style="background-image: url(<?php echo $imagePath ?>);">
-                                                <input type="button" class="details" value="More details">
-						<input type="button" class="going" value="GO">
+                        <input type="button" class="details" value="More details">
+						<input type="button" class="going" value="Go">
 					</div>
 
 					<p><img class="icon" src=<?php echo $path ?> height="64" width="64">
@@ -160,7 +160,19 @@ if(!isset($_SESSION["email"])) {
 						<a> <?php echo $eventHour; ?> </a>
 					</div>
 					<h1 class = "eventTitle"> <?php echo $row["name"]; ?></h1>
-					<br>
+					<?php 
+						$goingCmd = "SELECT * FROM attendance WHERE email = " . $_SESSION["email"] . " AND eventId = " . $row["id"];
+						$goingStmt = $db->prepare($goingCmd);
+						$goingStmt->execute();
+						$goingResult = $goingStmt->fetchAll();
+
+						if (empty($goingResult)) {
+							?> <a>going</a> <?php
+						} else {
+							?> <a>not going</a> <?php
+						}
+
+					?>
 					<br>
 					<div class="description">
 						<img class="icon" src="../res/images/info-dark.png" height="32" width="32">

@@ -1,5 +1,5 @@
 <?php
-$target_dir = ".." . DIRECTORY_SEPARATOR . "upload" . DIRECTORY_SEPARATOR;
+$target_dir = "C:\Users\Pedro\Documents\GitHub\LTW-FEUP\Social Network\upload" . DIRECTORY_SEPARATOR;
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -40,7 +40,7 @@ if ($uploadOk == 0) {
 	$date = $_POST["eventDate"];
     $time = $_POST["eventTime"];
     $finalDate = $date . " " . $time;
-	$currDate = date('Y/m/d h:i:s', time());
+	$currDate = date('Y/m/d G:i:s', time());
 
 	$diff = strtotime($finalDate) - strtotime($currDate);
 
@@ -50,17 +50,19 @@ if ($uploadOk == 0) {
     }
 
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-    	$name = $_POST["eventName"];
-    	$desc = $_POST["eventDescription"];
-    	$privacy = $_POST["eventPrivacy"];
-    	$type = $_POST["eventType"];
-    	$photoPath = basename($_FILES["fileToUpload"]["name"]);
+    	$name = htmlentities($_POST["eventName"]);
+    	$desc = htmlentities($_POST["eventDescription"]);
+    	$privacy = htmlentities($_POST["eventPrivacy"]);
+    	$type = htmlentities($_POST["eventType"]);
+    	$photoPath = htmlentities(basename($_FILES["fileToUpload"]["name"]));
         
         try {
+
         	$db = new PDO('sqlite:../database/database.db');
   			$stmt = $db->prepare('INSERT INTO event (name, description, type, photoPath, eventDate, createDate) VALUES (?, ?, ?, ?, ?, ?)');
   			$stmt->execute(array($name, $desc, $type, $photoPath, $finalDate, $currDate));
   			echo 'true';
+
 		} catch (PDOException $e) {
   			die;
 		}

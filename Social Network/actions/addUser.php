@@ -2,10 +2,10 @@
 
 $db = new PDO('sqlite:../database/database.db'); 
 
-$firstName = $_POST["firstName"];
-$lastName = $_POST["lastName"];
-$email = $_POST["email"];
-$password = $_POST["password"];
+$firstName = htmlentities($_POST["firstName"]);
+$lastName = htmlentities($_POST["lastName"]);
+$email = htmlentities($_POST["email"]);
+$password = htmlentities($_POST["password"]);
 
 try {
   	$stmt = $db->prepare('INSERT INTO user (firstName, lastName, email, password) VALUES (?, ?, ?, ?)');
