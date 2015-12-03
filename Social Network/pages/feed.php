@@ -19,25 +19,14 @@ if(!isset($_SESSION["email"])) {
     		<link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
     		<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
     		<link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    		<link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
     		<link rel="stylesheet" type="text/css" href="../css/feed.css">
     		<link rel="shortcut icon" href="../res/images/logo.png">
     		<title>Crasher</title> <!-- Color: #172626 -->
  		</head>
 
- 		<header>
+ 		<?php include '../templates/header.php'; ?>
 
-			<div id="logo">
-				<img src="../res/images/logo.png">
-			</div>
-
-			<h1><a href="../index.php">Crasher</a></h1>
-
-			<form action="../actions/logout.php" id="loutForm">
-				<a id="user"><?php echo $_SESSION["email"]; ?></a>
-    			<input type="submit" value="Log Out" id="lout">
-			</form>
-
-		</header>
 
 		<body>
 			<div id="eventfeed">
@@ -84,7 +73,7 @@ if(!isset($_SESSION["email"])) {
 			</div>
 
 			<?php
-				$db = new PDO('sqlite:../database/database.db');
+
 
 				$currDate = date('Y-m-d h:i:s', time());
 
@@ -97,6 +86,17 @@ if(!isset($_SESSION["email"])) {
 
   
 				foreach( $result as $row) {
+
+					$goingCmd = "SELECT * FROM attendance WHERE email = '" . $_SESSION["email"] . "' AND eventId = " . $row["id"];
+					$goingStmt = $db->prepare($goingCmd);
+					$goingStmt->execute();
+					$goingResult = $goingStmt->fetchAll();
+
+					if (empty($goingResult)) {
+						$goValue = "Go";
+					} else {
+						$goValue = "Don't Go";
+					}
 
 					switch($row["type"]) {
 						case "Party":
@@ -141,13 +141,17 @@ if(!isset($_SESSION["email"])) {
 
 					$imagePath = "../upload/" . $row["photoPath"];
 
+					$id = $row["id"];
+
+					$action = "../pages/event.php?EventId=" . $id;
+
 			?>
 
-			<div class="event">
-					<div class="background" style="background-image: url(<?php echo $imagePath ?>);">
-                        <input type="button" class="details" value="More details">
-						<input type="button" class="going" value="Go">
-					</div>
+			<div class="event" id ="<?php echo $id ?>">
+					<form action = "../pages/event.php" class="background" style="background-image: url(<?php echo $imagePath ?>);">
+                        <button type="submit" class="details" name="eventId" value="<?php echo $id ?>">More Details</button>
+						<input type="button" class="going" value="<?php echo $goValue ?>">
+					</form>
 
 					<p><img class="icon" src=<?php echo $path ?> height="64" width="64">
 					<a class="eventType"> <?php echo $row["type"]; ?> </a>
@@ -160,25 +164,19 @@ if(!isset($_SESSION["email"])) {
 						<a> <?php echo $eventHour; ?> </a>
 					</div>
 					<h1 class = "eventTitle"> <?php echo $row["name"]; ?></h1>
-					<?php 
-						$goingCmd = "SELECT * FROM attendance WHERE email = " . $_SESSION["email"] . " AND eventId = " . $row["id"];
-						$goingStmt = $db->prepare($goingCmd);
-						$goingStmt->execute();
-						$goingResult = $goingStmt->fetchAll();
-
-						if (empty($goingResult)) {
-							?> <a>going</a> <?php
-						} else {
-							?> <a>not going</a> <?php
-						}
-
-					?>
 					<br>
 					<div class="description">
 						<img class="icon" src="../res/images/info-dark.png" height="32" width="32">
 						<a> <?php echo $row["description"]; ?> </a>
 					</div>
-					<br>
+					<?php 
+						if (empty($goingResult)) {
+							?><h1 class = "status">Not Going</h1><?php
+						} else {
+							?><h1 class = "status">Going</h1><?php
+						}
+
+					?>
 			</div>
 
 			<?php } ?>

@@ -1,7 +1,7 @@
 *{
 	margin: 0px;
 	padding: 0px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Montserrat',Dosis, sans-serif;
 	font-size: 13px;
 }
 
@@ -27,8 +27,13 @@ header{
 #loutForm {
 	font-size: 13px;
 	float:right;
-	padding-top: 20px;
+	padding-top: 12px;
 	padding-right:5%;
+}
+
+#profilePic {
+	vertical-align: middle;
+	margin-right: 8px;
 }
 
 #user {
@@ -37,25 +42,12 @@ header{
 }
 
 #lout{
-	border-radius: 5px 0px 5px 0px;
-	color:#467373;
-	border: solid 1px #172626;
-	background-color: rgba(250,250,250,0.9);
-	height:33px;
-	width:75px;
-	font-size: 15px;
-	cursor: pointer;
-  	margin-left:20px;
-	transition: box-shadow 0.3s, border 0.3s,color 0.5s,background-color 0.5s;
+	height:20px;
+	width:20px;
+	vertical-align: middle;
+	margin-left:15px;
 }
 
-#lout:hover {
-	border: solid 1px white;
-  	box-shadow: 0 0 5px 1px #172626;
-  	color: white;
-  	background-color:#172626;
-  	cursor: pointer;
-}
 
 
 header h1 a:active{
@@ -65,7 +57,7 @@ header h1 a:active{
 
 header h1 a{
 	color:#6ae368;
-	font-family: 'Arial Black';
+	font-family: 'Montserrat', Dosis;
 	font-size: 40px;
 	float: left;
 	padding-top: 5px;
@@ -444,22 +436,27 @@ body {
 
 .event .background .details {
         width: 50%;
-  	height: 100%;
+ 	 	height: 100%;
         background: white;
         opacity: 0.7;
         display: none;
         float: left;
         border: none;
+        font-size: 25px;
+        opacity: 0.8;
+        text-align: center center;
 }
 
 .event .background .going {
         width: 50%;
-  	height: 100%;
+  		height: 100%;
         background: white;
         opacity: 0.7;
         display: none;
         float: right;
         border:none;
+        font-size: 25px;
+        opacity: 0.8;
 }
 
 .event .background:hover .details{
@@ -479,6 +476,14 @@ body {
 
 .event .background:hover .going:hover{
         opacity: 0.9;
+}
+
+.event .status {
+	padding: 3%;
+	font-size: 20px;
+	text-align:right;
+	font-family: Dosis;
+	font-weight: bold;
 }
 
 

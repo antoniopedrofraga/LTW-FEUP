@@ -3,15 +3,16 @@ CREATE TABLE user (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	firstName VARCHAR,
 	lastName VARCHAR,
+	photoPath VARCHAR,
 	email VARCHAR UNIQUE,
 	password VARCHAR
 );
 
-INSERT INTO user VALUES (NULL, 'Abel', 'Tiago', 'abelito@gmail.com', '1234');
+INSERT INTO user VALUES (NULL, 'Abel', 'Tiago', 'default-user.png', 'abelito@gmail.com', '1234');
 
-INSERT INTO user VALUES (NULL, 'Pedro', 'Fraga', 'antoniopedrofraga@gmail.com', '1234');
+INSERT INTO user VALUES (NULL, 'Pedro', 'Fraga', 'default-user.png', 'antoniopedrofraga@gmail.com', '1234');
 
-INSERT INTO user VALUES (NULL, 'Filipa', 'Barroso', 'pipinha@gmail.com', '1234');
+INSERT INTO user VALUES (NULL, 'Filipa', 'Barroso', 'default-user.png', 'pipinha@gmail.com', '1234');
 
 
 CREATE TABLE event (

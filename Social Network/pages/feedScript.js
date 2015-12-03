@@ -13,8 +13,6 @@ $('.privacy-div').on('click', function(event){
 
 $(function() {
 
-		console.log(pdd);
-		console.log(tdd);
 
 		$(document).click(function() {
 			$('.dropdown-div').removeClass('active');
@@ -118,14 +116,42 @@ $('.add-photos').on('click', function(event){
 		}
   });
 
-/*
- $(document).on('mousemove', function(e){
-    $('#triangle-isosceles').css({
-       display: inline;
-       left:  e.pageX,
-       top:   e.pageY
-    });
-});*/
+ $('.going').on('click', function(event){
+ 	var status = $(this).parent().parent().find($('h1.status'));
+
+ 	var eventId = parseFloat($(this).parent().parent().attr('id'));
+
+ 	var email = $('#user').text();
+
+
+ 	if($(this).val() == "Go") {
+ 		$(this).val("Don't Go");
+ 		status.text("Going");
+ 		var postPath = "../actions/addAttendance.php";
+ 	} else {
+ 		$(this).val("Go");
+ 		status.text("Not Going");
+ 		var postPath = "../actions/removeAttendance.php"
+ 	}
+
+ 	var script = $.post(postPath,  {id: eventId, email: email});
+
+ 	script.done(function(data) {
+      
+      	if(data != 'true') {
+            swal("Oops...", data, "error");
+      	}
+
+   	});
+
+   	script.fail(function() {
+      	swal("Oops...", "Error accessing database..", "error");
+   	});
+
+});
+
+
+
 
 
 
