@@ -142,7 +142,12 @@ if(!isset($_GET["eventId"])) {
 
 				<div class="eventAttendance" id=<?php echo $id; ?>>
 				<?php 
-					if (empty($goingResult)) {
+					if ($owner[0]["email"] == $_SESSION["email"]) {
+				?>
+					<button id="go">Edit</button>
+					<button id="dgo">Delete</button>
+				<?php 
+					} else if (empty($goingResult)) {
 				?>
 					<button id="go">Go</button>
 					<button id="dgo">Not going</button>
@@ -164,7 +169,8 @@ if(!isset($_GET["eventId"])) {
 				<div class="ownerInfo"> 
 					<div class="owner">
 						<img class="icon" src="../res/images/events/owner.png" height="32" width="32">
-						<a>Hosted by <?php echo $ownerName ?></a>
+						<a>Hosted by <?php if ($owner[0]["email"] == $_SESSION["email"]) echo "You";	
+											else echo $ownerName; ?></a>
 					</div>
 					<div class="description">
 						<img class="icon" src="../res/images/info-dark.png" height="32" width="32">

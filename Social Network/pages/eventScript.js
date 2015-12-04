@@ -1,7 +1,13 @@
 
 $(document).ready(function(){
 
-	if($("#go").text() == "Going") {
+   console.log($("#go").text());
+
+   if ($("#go").text() == "Edit") {
+
+      styleHost();
+
+	} else if ($("#go").text() == "Going") {
 
 		styleGo();
 
@@ -16,7 +22,9 @@ $(document).ready(function(){
 
 
  $('#go').on('click', function(event){
- 		if($("#go").text() != "Going") {
+      if ($("#go").text() == "Edit") {
+         return;
+      } else if ($("#dgo").text() == "Not going") {
  			styleGo();
  			$("#dgo").text("Don't go");
  			$("#go").text("Going");
@@ -27,15 +35,39 @@ $(document).ready(function(){
  });
 
  $('#dgo').on('click', function(event){
- 		if($("#dgo").text() != "Not going") {
- 			styleDGo();
- 			$("#dgo").text("Not going");
- 			$("#go").text("Go");
- 			var eventId = parseFloat($(this).parent().attr('id'));
- 			updateAttendance("../actions/removeAttendance.php", eventId);
-         loadAtInfo();
- 		}
- });
+   if ($("#dgo").text() == "Delete") {
+      
+      var fd = new FormData();
+
+      var id = parseFloat($('.eventTitle').attr('id'));
+
+      fd.append("id", id);
+
+      $.ajax({
+         url: '../actions/removeEvent.php',
+         data: fd,
+         contentType: false,
+         processData: false,
+         type: 'POST',
+         success: function(data){
+            if (data != 'true') {
+               swal("Oops...", data, "error");
+            } else {
+               window.location.replace("../pages/feed.php");
+            }
+         }
+      });
+      return;
+
+   } else if ($("#go").text() == "Going") {
+     styleDGo();
+     $("#dgo").text("Not going");
+     $("#go").text("Go");
+     var eventId = parseFloat($(this).parent().attr('id'));
+     updateAttendance("../actions/removeAttendance.php", eventId);
+     loadAtInfo();
+  }
+});
 
 
 
@@ -77,6 +109,27 @@ $(document).ready(function(){
    $(".commentForm").css({
       'display' : 'block'
    });
+ }
+
+
+ function styleHost() {
+
+   $("#go").css({
+      'box-shadow' : 'none',
+      'color' : '#467373',
+      'border' : 'solid 1px #172626'
+   });
+
+   $("#dgo").css({
+      'box-shadow' : 'none',
+      'color' : '#467373',
+      'border' : 'solid 1px #172626'
+   });
+
+   $(".commentForm").css({
+      'display' : 'block'
+   });
+
  }
 
 
