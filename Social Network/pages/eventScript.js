@@ -157,5 +157,10 @@ function loadAtInfo() {
    var id = parseFloat($('.eventTitle').attr('id'));
    $(".attendanceInfo").load("../templates/eventAt.php", {
            id: id
+   }, function( response, status, xhr ) {
+      if ( status == "error" ) {
+         var msg = "Sorry but there was an error loading attendance info: ";
+         swal("Oops..", msg + xhr.status + " " + xhr.statusText, "error");
+      }
    });
 }
