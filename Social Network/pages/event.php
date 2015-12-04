@@ -104,6 +104,20 @@ if(!isset($_GET["eventId"])) {
 					$imagePath = "../upload/" . $event["photoPath"];
 
 					$id = $event["id"];
+
+
+					$ownerCmd = "SELECT * FROM owner WHERE eventId = '" . $id . "'";
+					$ownerStmt = $db->prepare($ownerCmd);
+					$ownerStmt->execute();
+					$ownerResult = $ownerStmt->fetchAll();
+
+					$ownerCmd2 = "SELECT * FROM user WHERE email = '" . $ownerResult[0]["email"] . "'";
+					$ownerStmt2 = $db->prepare($ownerCmd2);
+					$ownerStmt2->execute();
+					$owner = $ownerStmt2->fetchAll();
+
+					$ownerName = $owner[0]["firstName"] . " " . $owner[0]["lastName"];
+
 		?>
 		<body>
 			<div class="top">
@@ -147,9 +161,17 @@ if(!isset($_GET["eventId"])) {
 			</div>
 
 			<div class="middle">
-				<div class="description">
-					<img class="icon" src="../res/images/info-dark.png" height="32" width="32">
-					<a> <?php echo $event["description"]; ?> </a>
+				<div class="ownerInfo"> 
+					<div class="owner">
+						<img class="icon" src="../res/images/events/owner.png" height="32" width="32">
+						<a>Hosted by <?php echo $ownerName ?></a>
+					</div>
+					<div class="description">
+						<img class="icon" src="../res/images/info-dark.png" height="32" width="32">
+						<a> <?php echo $event["description"]; ?> </a>
+					</div>
+				</div>
+				<div class="attendanceInfo"> 
 				</div>
 			</div>
 
@@ -218,6 +240,7 @@ if(!isset($_GET["eventId"])) {
 
   		<script src="../libs/dropdown.js"></script>
   		<script src="eventScript.js"></script>
+  		<script src="searchScript.js"></script>
   		
 		<!--using sweet alert-->
  		<script src="../sweetalert/dist/sweetalert.min.js"></script> <link rel="stylesheet" type="text/css" href="../sweetalert/dist/sweetalert.css">

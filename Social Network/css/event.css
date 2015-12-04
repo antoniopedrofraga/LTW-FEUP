@@ -23,6 +23,120 @@ header{
 	min-width: 1000px;
 }
 
+.searchForm {
+	display: inline-block;
+	position: relative;
+}
+
+.searchForm .dropdown {
+  /* Size & position */
+    position: absolute;
+    top: 140%;
+    left: 0;
+    right: 0;
+
+    width: 140%;
+
+    /* Styles */
+    background: white;
+    border-radius: inherit;
+    border: 1px solid rgba(0,0,0,0.17);
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    font-weight: normal;
+    transition: all 0.3s ease-in;
+    list-style: none;
+
+    /* Hiding */
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.searchForm .dropdown li {
+    display: block;
+    padding: 3px;
+    text-decoration: none;
+    color: #5E5951;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,1);
+    transition: all 0.2s ease-out;
+    border-bottom: 1px solid #e6e8ea;
+}
+
+.searchForm .dropdown li:hover {
+    background-color: #BCD4C2;
+    cursor: pointer;
+}
+
+.searchForm .dropdown li div .text{
+    display: inline-block;
+}
+
+
+.searchForm .dropdown li div div .name {
+    padding: 3px;
+    padding-bottom: 2px;
+    text-decoration: none;
+    font-size: 13px;
+    color: #5E5951;
+    transition: all 0.2s ease-out;
+    line-height: 15px;
+}
+
+.searchForm .dropdown li div div .description {
+    padding: 3px;
+    padding-top: 1px;
+    text-decoration: none;
+    color: gray;
+    font-size: 8px;
+    transition: all 0.2s ease-out;
+    line-height: 15px;
+}
+
+.searchForm .dropdown li div .image {
+	float: left;
+}
+
+.searchForm .dropdown li div div img {
+	display:block;
+   	height: 35px;
+   	width:35px;
+   	padding: 3px;
+   	object-fit: cover;
+}
+
+.searchForm .dropdown li a {
+    display: block;
+    padding: 3px;
+    text-decoration: none;
+    text-align: center;
+    color: #5E5951;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,1);
+    transition: all 0.2s ease-out;
+}
+
+#searchTextBox {
+	margin-top: 30px;
+	margin-left: 15%;
+    text-indent: 20px;
+    background-image: url("../res/images/search.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    text-indent: 30px;
+
+    border: 1px solid gray;
+	border-radius: 0px 0px 5px 5px;
+	-moz-border-radius: 0px 0px 5px 5px;
+	-webkit-border-radius: 0px 0px 5px 5px;
+
+	background-color: #ddddff;
+	-webkit-box-shadow: 0 -5px 30px 1px #000000;
+	-moz-box-shadow: 0 -5px 30px 1px #000000;
+	box-shadow: 0 -5px 30px 1px #000000;
+
+	width: 200px;
+	height: 25px;
+}
+
 
 #loutForm {
 	font-size: 13px;
@@ -103,7 +217,6 @@ body {
 
 .icon {
 	margin: 2%;
-	margin-left: 0%;
 	vertical-align: middle;
 }
 
@@ -240,11 +353,14 @@ body {
 }
 
 .middle {
-	width: 56%;
+	width: 58%;
 	margin: auto;
 	margin-top: 3%;
+}
 
-
+.middle .ownerInfo {
+	width: 40%;
+	margin-left: 0;
 	border: 1px solid gray;
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
@@ -256,9 +372,29 @@ body {
 	-moz-box-shadow: 0 -5px 30px 1px #000000;
 	box-shadow: 0 -5px 30px 1px #000000;
 	padding: 1%;
+	display:inline-block;
+}
 
-	text-align: center;
-	vertical-align: middle;
+.middle .attendanceInfo {
+	width: 40%;
+	margin-left: 0;
+	border: 1px solid gray;
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+
+	background-color: #ddddff;
+
+	-webkit-box-shadow: 0 -5px 30px 1px #000000;
+	-moz-box-shadow: 0 -5px 30px 1px #000000;
+	box-shadow: 0 -5px 30px 1px #000000;
+	padding: 1%;
+	display:inline-block;
+	float:right;
+}
+
+.middle .attendanceInfo .owner a {
+	font-size: 20px;
 }
 
 .comments {

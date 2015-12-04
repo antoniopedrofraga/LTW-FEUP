@@ -22,6 +22,7 @@ $(document).ready(function(){
  			$("#go").text("Going");
  			var eventId = parseFloat($(this).parent().attr('id'));
  			updateAttendance("../actions/addAttendance.php", eventId);
+         loadAtInfo();
  		}
  });
 
@@ -32,6 +33,7 @@ $(document).ready(function(){
  			$("#go").text("Go");
  			var eventId = parseFloat($(this).parent().attr('id'));
  			updateAttendance("../actions/removeAttendance.php", eventId);
+         loadAtInfo();
  		}
  });
 
@@ -142,4 +144,18 @@ function onError(element) {
 function onOk(element) {
    element.style.borderColor = 'gray';
    element.style.backgroundColor = 'white';
+}
+
+
+$( document ).ready(function() {
+   loadAtInfo();
+});
+
+
+
+function loadAtInfo() {
+   var id = parseFloat($('.eventTitle').attr('id'));
+   $(".attendanceInfo").load("../templates/eventAt.php", {
+           id: id
+   });
 }

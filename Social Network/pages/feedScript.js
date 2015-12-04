@@ -110,7 +110,9 @@ $('.add-photos').on('click', function(event){
 			if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
 				filename = filename.substring(1);
 			}
+
 		document.getElementById('photo-text').textContent = filename;
+
 		}
   });
 

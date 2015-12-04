@@ -64,22 +64,54 @@ header{
 
 .searchForm .dropdown li:hover {
     background-color: #BCD4C2;
+    cursor: pointer;
+}
+
+.searchForm .dropdown li div .text{
+    display: inline-block;
+}
+
+
+.searchForm .dropdown li div div .name {
+    padding: 3px;
+    padding-bottom: 2px;
+    text-decoration: none;
+    font-size: 13px;
+    color: #5E5951;
+    transition: all 0.2s ease-out;
+    line-height: 15px;
+}
+
+.searchForm .dropdown li div div .description {
+    padding: 3px;
+    padding-top: 1px;
+    text-decoration: none;
+    color: gray;
+    font-size: 8px;
+    transition: all 0.2s ease-out;
+    line-height: 15px;
+}
+
+.searchForm .dropdown li div .image {
+	float: left;
+}
+
+.searchForm .dropdown li div div img {
+	display:block;
+   	height: 35px;
+   	width:35px;
+   	padding: 3px;
+   	object-fit: cover;
 }
 
 .searchForm .dropdown li a {
+    display: block;
     padding: 3px;
     text-decoration: none;
+    text-align: center;
     color: #5E5951;
     box-shadow: inset 0 1px 0 rgba(255,255,255,1);
     transition: all 0.2s ease-out;
-}
-
-.searchForm .dropdown li img {
-   	vertical-align: middle;
-   	height: 30px;
-   	width:30px;
-   	padding: 3px;
-   	object-fit: cover;
 }
 
 #searchTextBox {
@@ -270,6 +302,7 @@ body {
 	margin: 8px;
 	margin-top: 30px;
 	display: inline-block;
+	text-overflow: ellipsis;
 }
 
 #addPhotos:hover {
