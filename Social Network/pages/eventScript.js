@@ -52,6 +52,10 @@ $(document).ready(function(){
  		'border' : 'solid 1px #6AE368'
  	});
 
+   $(".commentForm").css({
+      'display' : 'none'
+   });
+
  }
 
 
@@ -67,6 +71,10 @@ $(document).ready(function(){
  		'color' : '#467373',
  		'border' : 'solid 1px #172626'
  	});
+
+   $(".commentForm").css({
+      'display' : 'block'
+   });
  }
 
 
@@ -88,3 +96,50 @@ $(document).ready(function(){
       	swal("Oops...", "Error accessing database..", "error");
    	});
  }
+
+
+$('#commentButton').on('click', function(event){
+
+      var textBox = document.getElementById('commentTextBox');
+      var eventId = parseFloat($('.eventTitle').attr('id'));
+      var email = $('#user').text();
+
+      onOk(textBox);
+      
+      if(textBox.value == '') {
+         onError(textBox);
+      }
+
+      var fd = new FormData();
+
+      fd.append("email", email);
+      fd.append("id", eventId);
+      fd.append("text", textBox.value);
+
+
+      $.ajax({
+         url: '../actions/addComment.php',
+         data: fd,
+         contentType: false,
+         processData: false,
+         type: 'POST',
+         success: function(data){
+         if(data != 'true') {
+               swal("Oops...", data, "error");
+         } else {
+               $("#commentTextBox").text("");
+               location.reload();
+         }
+        }
+      });
+ });
+
+function onError(element) {
+   element.style.borderColor = 'red';
+   element.style.backgroundColor = '#FFDEDE';
+}
+
+function onOk(element) {
+   element.style.borderColor = 'gray';
+   element.style.backgroundColor = 'white';
+}

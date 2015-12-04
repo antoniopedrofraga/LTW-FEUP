@@ -21,6 +21,12 @@
 
 			<h1><a href="../index.php">Crasher</a></h1>
 
+			<form class="searchForm">
+				<input type="text" id="searchTextBox" name="search" placeholder="Search" autocomplete="off"/>
+				<ul class="dropdown" id="searchDropdown">
+				</ul>
+			</form>
+
 			<form action="../actions/logout.php" id="loutForm">
 				<img id="profilePic" src=<?php echo $profilePath; ?> height="50" width="50">
 				<a id="user"><?php echo $_SESSION["email"]; ?></a>

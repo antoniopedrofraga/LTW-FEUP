@@ -43,3 +43,30 @@ CREATE TABLE attendance (
 
 INSERT INTO attendance VALUES ('antoniopedrofraga@gmail.com', 1);
 INSERT INTO attendance VALUES ('antoniopedrofraga@gmail.com', 2);
+
+
+
+
+CREATE TABLE comment (
+	email VARCHAR,
+	eventId INTEGER,
+	commentText VARCHAR
+);
+
+
+INSERT INTO comment VALUES ('antoniopedrofraga@gmail.com', 1, 'Great, can not wait!');
+INSERT INTO comment VALUES ('antoniopedrofraga@gmail.com', 1, 'Best event ever!');
+
+
+CREATE TABLE owner (
+	email VARCHAR,
+	eventId INTEGER,
+	UNIQUE(email, eventId)
+);
+
+
+INSERT INTO owner VALUES ('antoniopedrofraga@gmail.com', 1);
+INSERT INTO owner VALUES ('antoniopedrofraga@gmail.com', 2);
+INSERT INTO owner VALUES ('pipinha@gmail.com', 3);
+INSERT INTO owner VALUES ('abelito@gmail.com', 4);
+

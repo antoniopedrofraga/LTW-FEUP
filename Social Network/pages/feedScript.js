@@ -1,5 +1,3 @@
-
-
 var pdd = new DropDown( $('#privacy-dd') );
 var tdd = new DropDown( $('#type-dd') );
 

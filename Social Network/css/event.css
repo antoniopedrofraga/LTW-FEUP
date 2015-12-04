@@ -103,6 +103,7 @@ body {
 
 .icon {
 	margin: 2%;
+	margin-left: 0%;
 	vertical-align: middle;
 }
 
@@ -282,11 +283,10 @@ body {
 
 }
 
-.commentText {
+.commentForm {
 	padding:0;
-	padding-bottom: 5%;
+	padding-bottom:3%;
 	padding-top:3%;
-	border-bottom: 1px solid black;
 	margin-left: 7%;
 	margin-right: 7%;
 }
@@ -336,6 +336,30 @@ body {
   	color: white;
   	background-color:#172626;
   	cursor: pointer;
+}
+
+.comment {
+	padding:0;
+	padding-bottom: 2%;
+	padding-top:2%;
+	margin-left: 7%;
+	margin-right: 7%;
+}
+
+.comment .commentPhoto {
+	vertical-align: middle;
+	border: solid 2px white;
+}
+
+.comment .commentUser {
+	margin-left: 1%;
+	color: #3a5a41;
+}
+
+.comment .commentText {
+	margin-left: 1%;
+	color: black;
+	margin-right: 1%;
 }
 
 footer{

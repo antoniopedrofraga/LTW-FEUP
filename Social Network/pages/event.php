@@ -154,13 +154,45 @@ if(!isset($_GET["eventId"])) {
 			</div>
 
 			<div class="comments">
-				<div class="commentText">
+				<div class="commentForm">
 					<input type="text" id="commentTextBox" placeholder="New Comment..." autocomplete="off"/>
 					<input type="button" id="commentButton" value="Comment"/>
 				</div>
 				<?php
-					
+					$cmtCmd = "SELECT * FROM comment WHERE eventId = '" . $event["id"] . "'";
+					$cmtStmt = $db->prepare($cmtCmd);
+					$cmtStmt->execute();
+					$cmtResult = $cmtStmt->fetchAll();
+
+					foreach($cmtResult as $comment) {
+
+						$userCmd = "SELECT * FROM user WHERE email = '" . $comment["email"] . "'";
+						$userStmt = $db->prepare($userCmd);
+						$userStmt->execute();
+						$userResult = $userStmt->fetchAll();
+						$user = $userResult[0];
+						$commentPhoto = "../upload/" . $user["photoPath"];
+
+						$userName = $user["firstName"] . " " . $user["lastName"];
 				?>
+				<div class="comment">
+					<img class="commentPhoto" src=<?php echo $commentPhoto; ?> height="32" width="32">
+					<a class="commentUser"><?php echo $userName; ?></a>
+					<a class="commentText"><?php echo $comment["commentText"]; ?></a>
+				</div>
+
+				<?php
+					}
+
+					if(empty($cmtResult)) {
+				?>
+				<div class="comment" style="text-align:center">
+					<a class="commentText" style="color:gray;">No comments to display</a>
+				</div>
+				<?php
+					}
+				?>
+
 			</div>
 
 		</body>

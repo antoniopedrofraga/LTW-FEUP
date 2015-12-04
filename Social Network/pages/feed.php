@@ -27,7 +27,6 @@ if(!isset($_SESSION["email"])) {
 
  		<?php include '../templates/header.php'; ?>
 
-
 		<body>
 			<div id="eventfeed">
 				<form action="" class="eventForm" id="submit-upload" method="post" enctype="multipart/form-data">
@@ -204,6 +203,7 @@ if(!isset($_SESSION["email"])) {
 
   		<script src="../libs/dropdown.js"></script>
   		<script src="feedScript.js"></script>
+  		<script src="searchScript.js"></script>
   		
 		<!--using sweet alert-->
  		<script src="../sweetalert/dist/sweetalert.min.js"></script> <link rel="stylesheet" type="text/css" href="../sweetalert/dist/sweetalert.css">
