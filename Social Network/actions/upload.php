@@ -2,6 +2,7 @@
 $target_dir = "C:\Users\Pedro\Documents\GitHub\LTW-FEUP\Social Network\upload" . DIRECTORY_SEPARATOR;
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
+$repeated = 0;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
 if(isset($_POST["submit"])) {
@@ -16,8 +17,8 @@ if(isset($_POST["submit"])) {
 }
 
 if (file_exists($target_file)) {
-    echo "Sorry, file already exists. ";
-    $uploadOk = 0;
+    $target_file = $target_dir . "v2" . basename($_FILES["fileToUpload"]["name"]);
+    $repeated = 1;
 }
 
 if ($_FILES["fileToUpload"]["size"] > 1048576 * 5) {
@@ -50,22 +51,8 @@ if ($uploadOk == 0) {
     }
 
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-    	$name = htmlentities($_POST["eventName"]);
-    	$desc = htmlentities($_POST["eventDescription"]);
-    	$privacy = htmlentities($_POST["eventPrivacy"]);
-    	$type = htmlentities($_POST["eventType"]);
-    	$photoPath = htmlentities(basename($_FILES["fileToUpload"]["name"]));
-        
-        try {
-
-        	$db = new PDO('sqlite:../database/database.db');
-  			$stmt = $db->prepare('INSERT INTO event (name, description, type, photoPath, eventDate, createDate) VALUES (?, ?, ?, ?, ?, ?)');
-  			$stmt->execute(array($name, $desc, $type, $photoPath, $finalDate, $currDate));
-  			echo 'true';
-
-		} catch (PDOException $e) {
-  			die;
-		}
+        if($repeated == 0) echo "true";
+        else echo "repeated";
     } else {
         echo "Sorry, there was an error uploading your file. ";
     }

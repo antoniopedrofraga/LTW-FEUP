@@ -290,7 +290,7 @@ body {
   	cursor: pointer;
 }
 
-#addPhotos {
+#add-photos {
 	width: 120px;
 	padding: 3px;
 	border: solid 1px gray;
@@ -305,7 +305,7 @@ body {
 	text-overflow: ellipsis;
 }
 
-#addPhotos:hover {
+#add-photos:hover {
 	cursor: pointer;
 }
 

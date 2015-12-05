@@ -59,7 +59,7 @@ if(!isset($_SESSION["email"])) {
 
 					<input type="time" class="placeholder" name="time" placeholder="Hour:" id="event-hour">
 
-					<div id="addPhotos" class="add-photos">
+					<div id="add-photos" class="add-photos">
 							<img class="icon" src="../res/images/events/add-photo.png" width="20" height="20">
 							<a id="photo-text">Add photo</a>
 					</div>
@@ -204,6 +204,7 @@ if(!isset($_SESSION["email"])) {
   		<script src="../libs/dropdown.js"></script>
   		<script src="feedScript.js"></script>
   		<script src="searchScript.js"></script>
+  		<script src="crtEventScript.js"></script>
   		
 		<!--using sweet alert-->
  		<script src="../sweetalert/dist/sweetalert.min.js"></script> <link rel="stylesheet" type="text/css" href="../sweetalert/dist/sweetalert.css">

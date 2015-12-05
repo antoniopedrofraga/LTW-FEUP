@@ -1,7 +1,6 @@
 
 $(document).ready(function(){
 
-   console.log($("#go").text());
 
    if ($("#go").text() == "Edit") {
 
@@ -19,10 +18,43 @@ $(document).ready(function(){
 
 });
 
+var pdd = new DropDown( $('#privacy-dd') );
+var tdd = new DropDown( $('#type-dd') );
+
+$('.privacy-div').on('click', function(event){
+      $('.dropdown-div').removeClass('active');
+      $(this).toggleClass('active');
+      return false;
+});
+
+   //...
+
+$(function() {
+
+
+      $(document).click(function() {
+         $('.dropdown-div').removeClass('active');
+      });
+
+});
+
+
+$('#eventBack').on('click', function(event){
+      $(this).css({
+      'display' : 'none'
+      });
+});
+
+
+$('#eventfeed').on('click', function(event){
+      return false;
+});
 
 
  $('#go').on('click', function(event){
       if ($("#go").text() == "Edit") {
+         
+         styleEditEvent();
          return;
       } else if ($("#dgo").text() == "Not going") {
  			styleGo();
@@ -216,4 +248,33 @@ function loadAtInfo() {
          swal("Oops..", msg + xhr.status + " " + xhr.statusText, "error");
       }
    });
+}
+
+
+function styleEditEvent() {
+   $('#eventBack').css({
+         'display' : 'block',
+   });
+
+   var name = $('.eventTitle .title').text();
+   var description = $('.description a').text();
+   var id = parseFloat($('.eventTitle').attr('id'));
+   var date = $('.eventDate #date').text();
+   var time = $('.eventDate #time').text();
+   var type = $('.eventTitle .icon').attr('id');
+   var image = $('.eventTitle .icon').attr('src');
+
+   var year = date[6] + date[7] + date[8] + date[9];
+   var month = date[3] + date[4];
+   var day = date[0] + date[1];
+
+   var properlyFormatted = year + "-" + month + "-" + day;
+
+   $('#nameTextBox').val(name);
+   $('#eventTextBox').val(description);
+
+   $('#type-dd span').text(type);
+   $('#event-date').val(properlyFormatted);
+   $('#event-hour').val(time);
+
 }

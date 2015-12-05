@@ -33,6 +33,52 @@ if(!isset($_GET["eventId"])) {
  		</head>
  		<?php include '../templates/header.php'; ?>
 
+ 		<div id="eventBack">
+
+ 			<div id="eventfeed">
+				<form action="" class="eventForm" id="submit-upload" method="post" enctype="multipart/form-data">
+
+					<input type="text" name="name" id="nameTextBox" placeholder="Event Name" autocomplete="off"/>
+
+					<input type="text" name="description" id="eventTextBox" placeholder="Say something about a new event..." autocomplete="off"/>
+					
+					<div id="privacy-dd" class="dropdown-div" tabindex="1">
+						<span id="privacy-span" name="privacySpan" >Public</span>
+						<ul class="dropdown">
+							<li><a href="#">Private</a></li>
+							<li><a href="#">Public</a></li>
+						</ul>
+					</div>
+
+					<div id="type-dd" class="dropdown-div" tabindex="1">
+						<span id="type-span" name="typeSpan">Type</span>
+						<ul class="dropdown">
+							<li><a href="#">Conference</a></li>
+							<li><a href="#">Party</a></li>
+							<li><a href="#">Reunion</a></li>
+							<li><a href="#">Concert</a></li>
+						</ul>
+					</div>
+
+					<input type="date" class="placeholder" name="date" id="event-date" placeholder="Date:">
+					
+					<br>
+
+					<input type="time" class="placeholder" name="time" placeholder="Hour:" id="event-hour">
+
+					<div id="addPhotos" class="add-photos">
+							<img class="icon" src="../res/images/events/add-photo.png" width="20" height="20">
+							<a id="photo-text">Add photo</a>
+					</div>
+
+					<input type="file" name="file-to-upload" id="file-to-upload">
+
+					<input type="submit" value="Save" name="submit" id="updEvent">
+
+					</form>
+				</div>
+			</div>
+
 		<?php
 
 				$currDate = date('Y-m-d h:i:s', time());
@@ -104,6 +150,7 @@ if(!isset($_GET["eventId"])) {
 					$imagePath = "../upload/" . $event["photoPath"];
 
 					$id = $event["id"];
+					$type = $event["type"];
 
 
 					$ownerCmd = "SELECT * FROM owner WHERE eventId = '" . $id . "'";
@@ -123,7 +170,7 @@ if(!isset($_GET["eventId"])) {
 			<div class="top">
 
 				<div class="eventTitle" id ="<?php echo $id ?>">
-					<img class="icon" src=<?php echo $path ?> height="64" width="64">
+					<img class="icon" src=<?php echo $path; ?> id=<?php echo $type;?> height="64" width="64">
 					<a class = "title"> <?php echo $event["name"]; ?></a>
 				</div>
 
@@ -135,9 +182,9 @@ if(!isset($_GET["eventId"])) {
 			<div class="topmiddle">
 				<div class="eventDate">
 					<img class="icon" src="../res/images/events/calendar-dark.png" height="24" width="24">
-					<a> <?php echo $eventDate; ?> </a>
+					<a id="date"><?php echo $eventDate; ?></a>
 					<img class="icon" id="watch" src="../res/images/events/clock.png" height="24" width="24">
-					<a> <?php echo $eventHour; ?> </a>
+					<a id="time"><?php echo $eventHour; ?></a>
 				</div>
 
 				<div class="eventAttendance" id=<?php echo $id; ?>>
@@ -247,6 +294,7 @@ if(!isset($_GET["eventId"])) {
   		<script src="../libs/dropdown.js"></script>
   		<script src="eventScript.js"></script>
   		<script src="searchScript.js"></script>
+  		<script src="updEventScript.js"></script>
   		
 		<!--using sweet alert-->
  		<script src="../sweetalert/dist/sweetalert.min.js"></script> <link rel="stylesheet" type="text/css" href="../sweetalert/dist/sweetalert.css">
