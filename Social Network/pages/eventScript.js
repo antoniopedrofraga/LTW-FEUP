@@ -41,14 +41,16 @@ $(function() {
 
 $('#eventBack').on('click', function(event){
       $(this).css({
-      'display' : 'none'
+         'display' : 'none'
       });
+
+      $('#eventfeed').css({
+         'display' : 'none',
+      });
+
 });
 
 
-$('#eventfeed').on('click', function(event){
-      return false;
-});
 
 
  $('#go').on('click', function(event){
@@ -256,6 +258,10 @@ function styleEditEvent() {
          'display' : 'block',
    });
 
+   $('#eventfeed').css({
+         'display' : 'block',
+   });
+
    var name = $('.eventTitle .title').text();
    var description = $('.description a').text();
    var id = parseFloat($('.eventTitle').attr('id'));
@@ -270,6 +276,8 @@ function styleEditEvent() {
 
    var properlyFormatted = year + "-" + month + "-" + day;
 
+   if(time.length == 4) time = '0' + time;
+
    $('#nameTextBox').val(name);
    $('#eventTextBox').val(description);
 
@@ -278,3 +286,5 @@ function styleEditEvent() {
    $('#event-hour').val(time);
 
 }
+
+

@@ -34,50 +34,52 @@ if(!isset($_GET["eventId"])) {
  		<?php include '../templates/header.php'; ?>
 
  		<div id="eventBack">
+ 		</div>
 
- 			<div id="eventfeed">
-				<form action="" class="eventForm" id="submit-upload" method="post" enctype="multipart/form-data">
+ 		<div id="eventfeed">
+ 			<h1>Edit</h1>
+ 			<form action="" class="eventForm" id="submit-edit" method="post" enctype="multipart/form-data">
 
-					<input type="text" name="name" id="nameTextBox" placeholder="Event Name" autocomplete="off"/>
 
-					<input type="text" name="description" id="eventTextBox" placeholder="Say something about a new event..." autocomplete="off"/>
-					
-					<div id="privacy-dd" class="dropdown-div" tabindex="1">
-						<span id="privacy-span" name="privacySpan" >Public</span>
-						<ul class="dropdown">
-							<li><a href="#">Private</a></li>
-							<li><a href="#">Public</a></li>
-						</ul>
-					</div>
+ 				<input type="text" name="name" id="nameTextBox" placeholder="Event Name" autocomplete="off"/>
 
-					<div id="type-dd" class="dropdown-div" tabindex="1">
-						<span id="type-span" name="typeSpan">Type</span>
-						<ul class="dropdown">
-							<li><a href="#">Conference</a></li>
-							<li><a href="#">Party</a></li>
-							<li><a href="#">Reunion</a></li>
-							<li><a href="#">Concert</a></li>
-						</ul>
-					</div>
+ 				<input type="text" name="description" id="eventTextBox" placeholder="Say something about a new event..." autocomplete="off"/>
 
-					<input type="date" class="placeholder" name="date" id="event-date" placeholder="Date:">
-					
-					<br>
+ 				<div id="privacy-dd" class="dropdown-div" tabindex="1">
+ 					<span id="privacy-span" name="privacySpan" >Public</span>
+ 					<ul class="dropdown">
+ 						<li><a href="#">Private</a></li>
+ 						<li><a href="#">Public</a></li>
+ 					</ul>
+ 				</div>
 
-					<input type="time" class="placeholder" name="time" placeholder="Hour:" id="event-hour">
+ 				<div id="type-dd" class="dropdown-div" tabindex="1">
+ 					<span id="type-span" name="typeSpan">Type</span>
+ 					<ul class="dropdown">
+ 						<li><a href="#">Conference</a></li>
+ 						<li><a href="#">Party</a></li>
+ 						<li><a href="#">Reunion</a></li>
+ 						<li><a href="#">Concert</a></li>
+ 					</ul>
+ 				</div>
 
-					<div id="addPhotos" class="add-photos">
-							<img class="icon" src="../res/images/events/add-photo.png" width="20" height="20">
-							<a id="photo-text">Add photo</a>
-					</div>
+ 				<input type="date" class="placeholder" name="date" id="event-date" placeholder="Date:">
 
-					<input type="file" name="file-to-upload" id="file-to-upload">
+ 				<br>
 
-					<input type="submit" value="Save" name="submit" id="updEvent">
+ 				<input type="time" class="placeholder" name="time" placeholder="Hour:" id="event-hour">
 
-					</form>
-				</div>
-			</div>
+ 				<div id="addPhotos" class="add-photos">
+ 					<img class="icon" src="../res/images/events/add-photo.png" width="20" height="20">
+ 					<a id="photo-text">Add photo</a>
+ 				</div>
+
+ 				<input multiple="multiple" type="file" name="file-to-upload" id="file-to-upload">
+
+ 				<input type="submit" value="Save" name="submit" id="updEvent">
+
+ 			</form>
+ 		</div>
 
 		<?php
 
@@ -171,7 +173,7 @@ if(!isset($_GET["eventId"])) {
 
 				<div class="eventTitle" id ="<?php echo $id ?>">
 					<img class="icon" src=<?php echo $path; ?> id=<?php echo $type;?> height="64" width="64">
-					<a class = "title"> <?php echo $event["name"]; ?></a>
+					<a class = "title"><?php echo $event["name"]; ?></a>
 				</div>
 
 				<div class="background" style="background-image: url(<?php echo $imagePath ?>);">
@@ -221,7 +223,7 @@ if(!isset($_GET["eventId"])) {
 					</div>
 					<div class="description">
 						<img class="icon" src="../res/images/info-dark.png" height="32" width="32">
-						<a> <?php echo $event["description"]; ?> </a>
+						<a><?php echo $event["description"]; ?> </a>
 					</div>
 				</div>
 				<div class="attendanceInfo"> 

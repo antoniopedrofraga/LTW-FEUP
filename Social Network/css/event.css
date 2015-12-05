@@ -237,7 +237,7 @@ body {
 	margin: auto;
 	left: 0;
 	right: 0;
-	top: 35%;
+	top: 20%;
 
 	border: 1px solid gray;
 	border-radius: 0px 0px 5px 5px;
@@ -252,16 +252,23 @@ body {
 	min-width: 709px;
 
 	z-index: 3;
+	display: none;
 
+}
+
+
+#eventfeed h1 {
+	margin-left: 50px;
+	margin-top: 30px;
+	font-size: 25px;
+	font-family: Dosis;
+	color: #3a5a41;
 }
 
 .eventForm {
 	margin: 50px;
 }
 
-#file-to-upload {
-    visibility: hidden;
-}
 
 #eventTextBox {
 	background-color: #FFFFFF;
@@ -354,7 +361,7 @@ body {
 }
 
 #file-to-upload {
-	visibility: hidden;
+	opacity: 0;
 }
 
 #event-hour {
