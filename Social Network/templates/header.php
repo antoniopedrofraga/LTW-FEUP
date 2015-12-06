@@ -1,4 +1,5 @@
  		<?php
+ 		
  			$db = new PDO('sqlite:../database/database.db');
 
  			$userCmd = "SELECT * FROM user WHERE email = '" . $_SESSION["email"] . "'";

@@ -2,6 +2,12 @@
 
 $db = new PDO('sqlite:../database/database.db'); 
 
+
+if(!isset($_POST["id"])) {
+	header('Location: ../index.php');
+    die();
+}
+
 $id = $_POST["id"];
 
 try {

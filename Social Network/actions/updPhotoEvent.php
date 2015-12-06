@@ -1,4 +1,12 @@
 <?php
+
+
+if(!isset($_FILES["fileToUpload"]["name"])) {
+  header('Location: ../index.php');
+    die();
+}
+
+
 $target_dir = ".." . DIRECTORY_SEPARATOR . "upload" . DIRECTORY_SEPARATOR;
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $target_name = basename($_FILES["fileToUpload"]["name"]);

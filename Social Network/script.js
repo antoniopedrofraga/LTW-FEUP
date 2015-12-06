@@ -67,12 +67,14 @@ document.getElementById('signup').onclick = function() {
          return false;
    }
 
-   if(!validateEmail(email)) {
-      swal("Oops...", "Please insert a valid e-mail...", "error");
+   if(!validateEmail(email.value)) {
+      swal("Oops...", "Please insert a valid e-mail..." , "error");
       return false;
    }
 
-   if(checkPassStrength("") == "") {
+   var teste = checkPassStrength(password.value);
+
+   if(checkPassStrength(password.value) == "") {
       swal("Oops...", "Please insert a stronger password...", "error");
       return;
    }
@@ -118,7 +120,7 @@ function addUser(user) {
    userPost.done(function(data) { 
       
       if(data != 'true') {
-         swal("Oops...", "Error adding a user to the database..", "error");
+         swal("Oops...", "Error adding a user to the database..\n" + data, "error");
       } else {
          var sup = document.getElementById('sup');
          sup.submit();
@@ -146,7 +148,7 @@ function User(firstName, lastName, email, password) {
 
 function validateEmail(email) {
     var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-    return re.test(email);
+    return String(email).search (re) != -1;
 }
 
 
@@ -206,7 +208,7 @@ $('#password').keyup(function() {
        });
    } else if (strength == "weak") {
       $(this).css({
-      'border' : '2px solid #FF6600'
+      'border' : '2px solid #FF3300'
        });
    } else if (strength == "good") {
       $(this).css({
@@ -226,7 +228,7 @@ $('#repeatPassword').keyup(function() {
 
 
    if(password == "") {
-      onOk(document.getElementById("password"));
+      onOk(document.getElementById("repeatPassword"));
    } else if (strength == "") {
       $(this).css({
       'border' : '2px solid red'

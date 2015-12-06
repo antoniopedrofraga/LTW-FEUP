@@ -1,5 +1,11 @@
 <?php
 
+
+if(!isset($_POST["id"])) {
+	header('Location: ../index.php');
+    die();
+}
+
 $name = htmlentities($_POST["eventName"]);
 $desc = htmlentities($_POST["eventDescription"]);
 $type = htmlentities($_POST["eventType"]);

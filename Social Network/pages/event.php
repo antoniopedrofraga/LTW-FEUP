@@ -13,6 +13,11 @@ if(!isset($_SESSION["email"])) {
 if(!isset($_GET["eventId"])) {
 	header('Location: ../index.php');
     die();
+} else {
+	if (!is_numeric($_GET["eventId"])) {
+		header('Location: ../index.php');
+    	die();
+	}
 }
 
 ?>
@@ -87,6 +92,11 @@ if(!isset($_GET["eventId"])) {
 				$stmt = $db->prepare($sqlCmd);
 				$stmt->execute();
 				$result = $stmt->fetchAll();
+
+				if(empty($result)) {
+                	header('Location: ../index.php');
+                	die();
+            	}
 
 				$event = $result[0];
 

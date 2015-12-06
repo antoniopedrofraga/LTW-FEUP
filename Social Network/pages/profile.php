@@ -10,6 +10,11 @@ if(!isset($_SESSION["email"])) {
 	}
 }
 
+if(!isset($_GET["id"])) {
+    header('Location: ../index.php');
+    die();
+}
+
 ?>
 
 
@@ -32,6 +37,11 @@ if(!isset($_SESSION["email"])) {
             $idStmt = $db->prepare($idCmd);
             $idStmt->execute();
             $idResult = $idStmt->fetchAll();
+            
+            if(empty($idResult)) {
+                header('Location: ../index.php');
+                die();
+            }
 
             $user = $idResult[0];
             $photoPath = "../upload/" . $user["photoPath"];

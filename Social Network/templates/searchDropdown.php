@@ -18,7 +18,7 @@ if ( strlen($string) > 0 ) {
 	$it = 0;
 
 	foreach ($searchResult as $evnt) {
-		if ($it <= 7) {
+		if ($it < 6) {
 			echo "<li>";
 			echo "<div onclick=\"window.location = 'event.php?eventId=" . $evnt["id"] . "'\">";
 			echo "<div class=\"image\"><img src=\"../upload/" . $evnt["photoPath"] . "\"></div>";
@@ -34,7 +34,7 @@ if ( strlen($string) > 0 ) {
 
 
 	foreach ($userResult as $user) {
-		if ($it <= 7) {
+		if ($it < 6) {
 			$name =  $user["firstName"] . " " . $user["lastName"];
 			echo "<li>";
 			echo "<div onclick=\"window.location = 'profile.php?id=" . $user["id"] . "'\">";
