@@ -303,7 +303,7 @@ body {
 .eventTitle a {
 	color: white;
 	font-family: Dosis;
-	font-size: 50px;
+	font-size: 60px;
 }	
 
 .icon {
@@ -542,7 +542,7 @@ body {
 	width: 30%;
 	margin-left: 2%;
 
-	border: 1px solid white;
+	border: 1px solid #6ae368;
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
@@ -563,7 +563,7 @@ body {
 
 	float: right;
 
-	border: 1px solid white;
+	border: 1px solid #6ae368;
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
@@ -590,7 +590,7 @@ body {
 
 .topmiddle .eventAttendance #go:hover {
 	color: white;
-  	background-color:#BCD4C2;
+  	background-color:#6ae368;
   	cursor: pointer;
 }
 
@@ -609,7 +609,7 @@ body {
 
 .topmiddle .eventAttendance #dgo:hover {
 	color: white;
-  	background-color:#BCD4C2;
+  	background-color:#6ae368;
   	cursor: pointer;
 }
 
@@ -622,7 +622,7 @@ body {
 .middle .ownerInfo {
 	width: 40%;
 	margin-left: 0;
-	border: 1px solid white;
+	border: 1px solid #6ae368;
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
@@ -634,7 +634,7 @@ body {
 .middle .attendanceInfo {
 	width: 40%;
 	margin-left: 0;
-	border: 1px solid white;
+	border: 1px solid #6ae368;
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
@@ -732,7 +732,7 @@ body {
 	border: solid 1px white;
   	box-shadow: 0 0 5px 1px #172626;
   	color: white;
-  	background-color:#172626;
+  	background-color:#6ae368;
   	cursor: pointer;
 }
 

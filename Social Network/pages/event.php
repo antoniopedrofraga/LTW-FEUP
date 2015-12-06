@@ -50,9 +50,11 @@ if(!isset($_GET["eventId"])) {
  					<span id="type-span" name="typeSpan">Type</span>
  					<ul class="dropdown">
  						<li><a href="#">Conference</a></li>
- 						<li><a href="#">Party</a></li>
- 						<li><a href="#">Reunion</a></li>
- 						<li><a href="#">Concert</a></li>
+						<li><a href="#">Reunion</a></li>
+						<li><a href="#">Party</a></li>
+						<li><a href="#">Concert</a></li>
+						<li><a href="#">Sports</a></li>
+						<li><a href="#">Travel</a></li>
  					</ul>
  				</div>
 
@@ -103,16 +105,22 @@ if(!isset($_GET["eventId"])) {
 
 				switch($event["type"]) {
 						case "Party":
-						$path = "../res/images/events/party-white.png";
+						$path = "../res/images/events/party.png";
 						break;
 						case "Conference":
-						$path = "../res/images/events/conference-white.png";
+						$path = "../res/images/events/conference.png";
 						break;
 						case "Concert":
-						$path = "../res/images/events/concert-white.png";
+						$path = "../res/images/events/concert.png";
 						break;
 						case "Reunion":
-						$path = "../res/images/events/reunion-white.png";
+						$path = "../res/images/events/reunion.png";
+						break;
+						case "Sports":
+						$path = "../res/images/events/sports.png";
+						break;
+						case "Travel":
+						$path = "../res/images/events/travel.png";
 						break;
 						default:
 						$path = "";
