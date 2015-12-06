@@ -17,9 +17,10 @@ if(isset($_POST["submit"])) {
     }
 }
 $version = 0;
-while(file_exists($target_file)) {
+while (file_exists($target_file)) {
     $target_file = $target_dir . $version . basename($_FILES["fileToUpload"]["name"]);
     $target_name = $version . basename($_FILES["fileToUpload"]["name"]);
+    $version++;
 }
 
 if ($_FILES["fileToUpload"]["size"] > 1048576 * 5) {
@@ -39,32 +40,20 @@ if ($uploadOk == 0) {
 
 } else {
 
-	$date = $_POST["eventDate"];
-    $time = $_POST["eventTime"];
-    $finalDate = $date . " " . $time;
-	$currDate = date('Y/m/d G:i:s', time());
-
-	$diff = strtotime($finalDate) - strtotime($currDate);
-
-	if($diff < 0) {
-    		echo "Please create an event with an upcoming date... " . $diff;
-    		return;
-    }
 
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         try {
-           $id = $_POST["id"];
-           $db = new PDO('sqlite:../database/database.db');
-           $stmt = $db->prepare('UPDATE event SET photoPath = ? WHERE id = ?');
-           $stmt->execute(array($target_name, $id));
-           echo "true";
-
-       } catch (PDOException $e) {
-          echo $e->getMessage();
-      }
+        $email = $_POST["email"];
+        $db = new PDO('sqlite:../database/database.db');
+        $stmt = $db->prepare('UPDATE user SET photoPath = ? WHERE email = ?');
+        $stmt->execute(array($target_name, $email));
+        echo 'true';
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
 
     } else {
-    echo "Sorry, there was an error uploading your file. ";
+        echo "Sorry, there was an error uploading your file. ";
     }
 }
 ?>

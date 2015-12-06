@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $db = new PDO('sqlite:../database/database.db');
 
 $id = $_POST["id"];
@@ -10,9 +12,26 @@ $atStmt->execute();
 $at = $atStmt->fetchAll();
 $atNumber = count($at);
 
+$linCmd = "SELECT * FROM user WHERE email = '" . $_SESSION["email"] . "'";
+$linStmt = $db->prepare($linCmd);
+$linStmt->execute();
+$lin = $linStmt->fetchAll();
+$lin = $lin[0];
+
+
+
 echo "<div class=\"owner\">";
-echo "<img class=\"icon\" src=\"../res/images/events/check.png\" height=\"32\" width=\"32\">";
-echo "<a>Going: " . $atNumber . "</a>";
+echo "<a class=\"number\" >" . $atNumber . "</a>";
+echo "<a class=\"text\" > going</a>";
 echo "</div>";
+
+foreach($at as $attendance) {
+	$userCmd = "SELECT * FROM user WHERE email = '" . $attendance["email"] . "'";
+	$userStmt = $db->prepare($userCmd);
+	$userStmt->execute();
+	$user = $userStmt->fetchAll();
+	$user = $user[0];
+	echo "<img href='/profile.php?id=" . $user['id'] ."' src='../upload/" . $user['photoPath'] . "' width ='50' height='50' style='display: inline-block;'>";
+}
 
 ?>

@@ -2,7 +2,6 @@ document.getElementById('crtEvent').onclick = function() {
 	
 	var name = document.getElementById('nameTextBox');
 	var description = document.getElementById('eventTextBox');
-	var privacy = document.getElementById('privacy-span').textContent;
 	var type = document.getElementById('type-span');
 	var date = document.getElementById('event-date');
 	var hour = document.getElementById('event-hour');
@@ -39,7 +38,6 @@ document.getElementById('crtEvent').onclick = function() {
 	fd.append("fileToUpload", file_data);
 	fd.append("eventName", name.value);
 	fd.append("eventDescription", description.value);
-	fd.append("eventPrivacy", privacy);
 	fd.append("eventType", type.textContent);
 	fd.append("eventDate", date.value);
 	fd.append("eventTime", hour.value);

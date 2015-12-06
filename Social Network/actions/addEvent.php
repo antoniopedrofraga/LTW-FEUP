@@ -2,7 +2,6 @@
 
 $name = htmlentities($_POST["eventName"]);
 $desc = htmlentities($_POST["eventDescription"]);
-$privacy = htmlentities($_POST["eventPrivacy"]);
 $type = htmlentities($_POST["eventType"]);
 $photoPath = htmlentities(basename($_FILES["fileToUpload"]["name"]));
 $date = $_POST["eventDate"];

@@ -48,14 +48,15 @@ INSERT INTO attendance VALUES ('antoniopedrofraga@gmail.com', 2);
 
 
 CREATE TABLE comment (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	email VARCHAR,
 	eventId INTEGER,
 	commentText VARCHAR
 );
 
 
-INSERT INTO comment VALUES ('antoniopedrofraga@gmail.com', 1, 'Great, can not wait!');
-INSERT INTO comment VALUES ('antoniopedrofraga@gmail.com', 1, 'Best event ever!');
+INSERT INTO comment VALUES (NULL, 'antoniopedrofraga@gmail.com', 1, 'Great, can not wait!');
+INSERT INTO comment VALUES (NULL, 'antoniopedrofraga@gmail.com', 1, 'Best event ever!');
 
 
 CREATE TABLE owner (

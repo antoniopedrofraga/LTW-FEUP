@@ -1,0 +1,475 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Montserrat',Dosis, sans-serif;
+	font-size: 13px;
+}
+
+header{
+	height: 75px;
+	border-bottom: 0px;
+	padding-left: auto;
+	padding-right: auto;
+	min-width: 100%;
+	border-bottom-left-radius: 15%;
+	border-bottom-right-radius: 15%;
+	font-size: 20px;
+	background-color: #181818;
+	-webkit-box-shadow: 0 -5px 30px 1px #000000;
+	-moz-box-shadow: 0 -5px 30px 1px #000000;
+	box-shadow: 0 -5px 50px 1px #000000;
+	z-index: 1;
+	position: relative;
+	min-width: 1200px;
+}
+
+.searchForm {
+	display: inline-block;
+	position: relative;
+}
+
+.searchForm .dropdown {
+  /* Size & position */
+    position: absolute;
+    top: 140%;
+    left: 0;
+    right: 0;
+
+    width: 140%;
+
+    /* Styles */
+    background: white;
+    border-radius: inherit;
+    border: 1px solid rgba(0,0,0,0.17);
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    font-weight: normal;
+    transition: all 0.3s ease-in;
+    list-style: none;
+
+    /* Hiding */
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.searchForm .dropdown li {
+    display: block;
+    padding: 3px;
+    text-decoration: none;
+    color: #5E5951;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,1);
+    transition: all 0.2s ease-out;
+    border-bottom: 1px solid #e6e8ea;
+}
+
+.searchForm .dropdown li:hover {
+    background-color: #BCD4C2;
+    cursor: pointer;
+}
+
+.searchForm .dropdown li div .text{
+    display: inline-block;
+}
+
+
+.searchForm .dropdown li div div .name {
+    padding: 3px;
+    padding-bottom: 2px;
+    text-decoration: none;
+    font-size: 13px;
+    color: #5E5951;
+    transition: all 0.2s ease-out;
+    line-height: 15px;
+}
+
+.searchForm .dropdown li div div .description {
+    padding: 3px;
+    padding-top: 1px;
+    text-decoration: none;
+    color: gray;
+    font-size: 8px;
+    transition: all 0.2s ease-out;
+    line-height: 15px;
+}
+
+.searchForm .dropdown li div .image {
+	float: left;
+}
+
+.searchForm .dropdown li div div img {
+	display:block;
+   	height: 35px;
+   	width:35px;
+   	padding: 3px;
+   	object-fit: cover;
+}
+
+.searchForm .dropdown li a {
+    display: block;
+    padding: 3px;
+    text-decoration: none;
+    text-align: center;
+    color: #5E5951;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,1);
+    transition: all 0.2s ease-out;
+}
+
+#searchTextBox {
+	margin-top: 30px;
+	margin-left: 15%;
+    text-indent: 20px;
+    background-image: url("../res/images/search.png");
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: 3% 45%;
+    text-indent: 30px;
+
+    border: 1px solid gray;
+	border-radius: 0px 0px 5px 5px;
+	-moz-border-radius: 0px 0px 5px 5px;
+	-webkit-border-radius: 0px 0px 5px 5px;
+
+	background-color: #ddddff;
+	-webkit-box-shadow: 0 -5px 30px 1px #000000;
+	-moz-box-shadow: 0 -5px 30px 1px #000000;
+	box-shadow: 0 -5px 30px 1px #000000;
+
+	width: 200px;
+	height: 25px;
+}
+
+#loutForm .dropdown {
+  /* Size & position */
+    position: absolute;
+    top: 75%;
+    left: 85%;
+    right: 95%;
+
+    width: 11%;
+    
+    /* Styles */
+    background: white;
+    border-radius: inherit;
+    border: 1px solid rgba(0,0,0,0.17);
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    font-weight: normal;
+    transition: all 0.3s ease-in;
+    list-style: none;
+
+    /* Hiding */
+    opacity: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+
+#loutForm .dropdown li span {
+    padding: 3px;
+    padding-left: 13%;
+    text-decoration: none;
+    color: #5E5951;
+    transition: all 0.2s ease-out;
+}
+
+#loutForm .dropdown li div img {
+    vertical-align: middle;
+    margin: 7px;
+    margin-left: 10px;
+}
+
+
+
+/* Hover state */
+
+#loutForm .dropdown li:hover div {
+    background: rgba(0,105,26,0.5);
+    cursor:pointer;
+}
+
+
+#loutForm .dropdown:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    right: 15px;
+    border-width: 0 6px 6px 6px;
+    border-style: solid;
+    border-color: #fff transparent;    
+}
+
+#loutForm .dropdown:before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    right: 13px;
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.1) transparent;    
+}
+
+#loutForm .arrow {
+    vertical-align: middle;
+    padding-left: 5px;
+}
+
+
+#loutForm {
+	font-size: 13px;
+	float:right;
+	padding-top: 12px;
+	padding-right:5%;
+}
+
+
+#profilePic {
+	vertical-align: middle;
+	margin-right: 8px;
+}
+
+#user {
+    font-size: 15px;
+    color: gray;
+    transition: all 0.3s ease-in;
+}
+
+#loutForm:hover #user {
+    color: white;
+}
+
+#lout{
+	height:20px;
+	width:20px;
+	vertical-align: middle;
+	margin-left:15px;
+}
+
+#email-ico {
+    margin-left: 2px;
+    margin-right: 3%;
+}
+
+
+
+header h1 a:active{
+	text-decoration: none;
+	color:#607D8B;
+}
+
+header h1 a{
+	color:#6ae368;
+	font-family: 'Montserrat', Dosis;
+	font-size: 40px;
+	float: left;
+	padding-top: 5px;
+	padding-top: 12px;
+	transition:color 0.5s;
+	text-decoration: none
+}
+
+#logo img{
+	margin: auto 25px;
+	float: left;
+	width: 65px;
+	height: 65px;
+	padding-top: 5px;
+	padding-left:5%;
+}
+
+
+body {
+	background-color:#333333;
+}
+
+#profile {
+    width: 50%;
+    margin: auto;
+}
+
+#profile #profilePic {
+    margin-top: 10%;
+    border: 3px solid white;
+    float: left;
+}
+
+#profile #name {
+    margin-top: 15%;
+    padding: 3px;
+    margin-left: 5%;
+    padding-bottom: 2px;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 15px;
+    display:inline-block;
+    font-family: Dosis;
+    font-size: 50px;
+    color: white;
+}
+
+#profile #email{
+    margin-top: 3%;
+    margin-left: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 10px;
+    transition: all 0.2s ease-out;
+    line-height: 15px;
+}
+
+#profile #email img{
+    margin-left: 5%;
+    vertical-align: middle;
+}
+
+#profile #stats {
+    margin-top: 5%;
+}
+
+#profile #stats .number{
+    margin-left: 2%;
+    vertical-align: middle;
+    padding: 3px;
+    margin-left: 5%;
+    padding-bottom: 2px;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 15px;
+    font-size: 50px;
+    color: white;
+
+    vertical-align: middle;
+}
+
+#profile #stats .text{
+    margin-top: 15%;
+    margin-left: 3px;
+    margin-right: 7px;
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    transition: all 0.2s ease-out;
+    line-height: 15px;
+    font-family: Dosis;
+    color: gray;
+}
+
+#profile #attendedEvents {
+    margin-top: 10%;
+    display: inline-block;
+    text-align: right;
+    width:49%;
+    float:right;
+    border-left: 1px solid white;
+}
+
+#profile #hostedEvents {
+    margin-top: 4%;
+    display: inline-block;
+    text-align: left;
+    width: 49%;
+}
+
+#profile .title {
+    font-size: 20px;
+    color: #6AE368;
+    font-family: Dosis;
+}
+
+#profile .eventImg {
+    display:inline-block;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+
+
+
+#profile .eventImg:hover .dropdown {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+#profile .eventImg:hover {
+    cursor: pointer;
+}
+
+
+#profile .eventImg .dropdown {
+  /* Size & position */
+    position: absolute;
+    top: 140%;
+    left: 0;
+    right: 0;
+    display: inline-block;
+
+    /* Styles */
+    font-weight: normal;
+    transition: all 0.3s ease-in;
+    list-style: none;
+
+    /* Hiding */
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+#profile .eventImg .dropdown li {
+    white-space: nowrap;
+}
+
+#profile .eventImg .dropdown li a {
+    display: inline-block;
+    padding: 3px;
+    text-decoration: none;
+    color: #5E5951;
+    border-bottom: 1px solid #e6e8ea;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,1);
+    transition: all 0.2s ease-out;
+    white-space: nowrap;
+
+    background-color: white;
+}
+
+/* Hover state */
+
+#profile  .eventImg .dropdown li:hover a {
+    background: rgba(0,105,26,0.5);
+    white-space: nowrap;
+}
+
+
+#profile .eventImg .dropdown:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    right: 13px;
+    border-width: 0 6px 6px 6px;
+    border-style: solid;
+    border-color: #fff transparent;
+    white-space: nowrap;    
+}
+
+#profile .eventImg .dropdown:before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    right: 15px;
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.1) transparent; 
+    white-space: nowrap;   
+}
+

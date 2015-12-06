@@ -119,8 +119,9 @@ header{
 	margin-left: 15%;
     text-indent: 20px;
     background-image: url("../res/images/search.png");
-    background-size: 20px 20px;
+    background-size: 18px 18px;
     background-repeat: no-repeat;
+    background-position: 3% 45%;
     text-indent: 30px;
 
     border: 1px solid gray;
@@ -137,6 +138,83 @@ header{
 	height: 25px;
 }
 
+#loutForm .dropdown {
+  /* Size & position */
+    position: absolute;
+    top: 75%;
+    left: 85%;
+    right: 95%;
+
+    width: 11%;
+    
+    /* Styles */
+    background: white;
+    border-radius: inherit;
+    border: 1px solid rgba(0,0,0,0.17);
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    font-weight: normal;
+    transition: all 0.3s ease-in;
+    list-style: none;
+
+    /* Hiding */
+    opacity: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+
+#loutForm .dropdown li span {
+    padding: 3px;
+    padding-left: 13%;
+    text-decoration: none;
+    color: #5E5951;
+    transition: all 0.2s ease-out;
+}
+
+#loutForm .dropdown li div img {
+    vertical-align: middle;
+    margin: 7px;
+    margin-left: 10px;
+}
+
+
+
+/* Hover state */
+
+#loutForm .dropdown li:hover div {
+    background: rgba(0,105,26,0.5);
+    cursor:pointer;
+}
+
+
+#loutForm .dropdown:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    right: 15px;
+    border-width: 0 6px 6px 6px;
+    border-style: solid;
+    border-color: #fff transparent;    
+}
+
+#loutForm .dropdown:before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    right: 13px;
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.1) transparent;    
+}
+
+#loutForm .arrow {
+    vertical-align: middle;
+    padding-left: 5px;
+}
+
 
 #loutForm {
 	font-size: 13px;
@@ -145,6 +223,9 @@ header{
 	padding-right:5%;
 }
 
+
+
+
 #profilePic {
 	vertical-align: middle;
 	margin-right: 8px;
@@ -152,7 +233,12 @@ header{
 
 #user {
 	font-size: 15px;
-	color: #6AE368;
+	color: gray;
+    transition: all 0.3s ease-in;
+}
+
+#loutForm:hover #user {
+    color: white;
 }
 
 #lout{
@@ -191,7 +277,7 @@ header h1 a{
 
 
 body {
-	background-color:#606060;
+	background-color:#333333;
 }
 
 #eventfeed {
@@ -208,13 +294,14 @@ body {
 	-moz-box-shadow: 0 -5px 30px 1px #000000;
 	box-shadow: 0 -5px 30px 1px #000000;
 	position: relative;
-	min-width: 709px;
+	min-width: 812px;
 }
 
 
 
 .eventForm {
 	margin: 50px;
+    min-width: 710px;
 }
 
 #file-to-upload {
@@ -552,8 +639,6 @@ body {
 }
 
 .event .background .details {
-        width: 50%;
- 	 	height: 100%;
         background: white;
         opacity: 0.7;
         display: none;
@@ -565,8 +650,6 @@ body {
 }
 
 .event .background .going {
-        width: 50%;
-  		height: 100%;
         background: white;
         opacity: 0.7;
         display: none;

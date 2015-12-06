@@ -31,6 +31,7 @@ if(!isset($_GET["eventId"])) {
     		<link rel="shortcut icon" href="../res/images/logo.png">
     		<title>Crasher</title> <!-- Color: #172626 -->
  		</head>
+ 		
  		<?php include '../templates/header.php'; ?>
 
  		<div id="eventBack">
@@ -44,14 +45,6 @@ if(!isset($_GET["eventId"])) {
  				<input type="text" name="name" id="nameTextBox" placeholder="Event Name" autocomplete="off"/>
 
  				<input type="text" name="description" id="eventTextBox" placeholder="Say something about a new event..." autocomplete="off"/>
-
- 				<div id="privacy-dd" class="dropdown-div" tabindex="1">
- 					<span id="privacy-span" name="privacySpan" >Public</span>
- 					<ul class="dropdown">
- 						<li><a href="#">Private</a></li>
- 						<li><a href="#">Public</a></li>
- 					</ul>
- 				</div>
 
  				<div id="type-dd" class="dropdown-div" tabindex="1">
  					<span id="type-span" name="typeSpan">Type</span>
@@ -110,16 +103,16 @@ if(!isset($_GET["eventId"])) {
 
 				switch($event["type"]) {
 						case "Party":
-						$path = "../res/images/events/party.png";
+						$path = "../res/images/events/party-white.png";
 						break;
 						case "Conference":
-						$path = "../res/images/events/conference.png";
+						$path = "../res/images/events/conference-white.png";
 						break;
 						case "Concert":
-						$path = "../res/images/events/concert.png";
+						$path = "../res/images/events/concert-white.png";
 						break;
 						case "Reunion":
-						$path = "../res/images/events/reunion.png";
+						$path = "../res/images/events/reunion-white.png";
 						break;
 						default:
 						$path = "";
@@ -167,25 +160,27 @@ if(!isset($_GET["eventId"])) {
 
 					$ownerName = $owner[0]["firstName"] . " " . $owner[0]["lastName"];
 
+					$ownerLink = "profile.php?id=" . $owner[0]["id"];
+
 		?>
 		<body>
 			<div class="top">
 
-				<div class="eventTitle" id ="<?php echo $id ?>">
-					<img class="icon" src=<?php echo $path; ?> id=<?php echo $type;?> height="64" width="64">
-					<a class = "title"><?php echo $event["name"]; ?></a>
-				</div>
 
 				<div class="background" style="background-image: url(<?php echo $imagePath ?>);">
+					<div class="eventTitle" id ="<?php echo $id ?>">
+						<img class="icon" src=<?php echo $path; ?> id=<?php echo $type;?> height="64" width="64">
+						<a class = "title"><?php echo $event["name"]; ?></a>
+					</div>
 				</div>
 
 			</div>
 
 			<div class="topmiddle">
 				<div class="eventDate">
-					<img class="icon" src="../res/images/events/calendar-dark.png" height="24" width="24">
+					<img class="icon" src="../res/images/events/calendar.png" height="24" width="24">
 					<a id="date"><?php echo $eventDate; ?></a>
-					<img class="icon" id="watch" src="../res/images/events/clock.png" height="24" width="24">
+					<img class="icon" id="watch" src="../res/images/events/clock1.png" height="24" width="24">
 					<a id="time"><?php echo $eventHour; ?></a>
 				</div>
 
@@ -217,17 +212,18 @@ if(!isset($_GET["eventId"])) {
 			<div class="middle">
 				<div class="ownerInfo"> 
 					<div class="owner">
-						<img class="icon" src="../res/images/events/owner.png" height="32" width="32">
-						<a>Hosted by <?php if ($owner[0]["email"] == $_SESSION["email"]) echo "You";	
+						<img class="icon" src="../res/images/events/owner1.png" height="32" width="32">
+						<a>Hosted by </a><a href=<?php echo $ownerLink ?> style="color: white"><?php if ($owner[0]["email"] == $_SESSION["email"]) echo "You";	
 											else echo $ownerName; ?></a>
 					</div>
 					<div class="description">
-						<img class="icon" src="../res/images/info-dark.png" height="32" width="32">
+						<img class="icon" src="../res/images/info.png" height="32" width="32">
 						<a><?php echo $event["description"]; ?> </a>
 					</div>
 				</div>
-				<div class="attendanceInfo"> 
+				<div class="attendanceInfo">
 				</div>
+				<a href="profile.php?id=3" style="color: white">Filipa Barroso</a>
 			</div>
 
 			<div class="comments">
@@ -252,8 +248,15 @@ if(!isset($_GET["eventId"])) {
 
 						$userName = $user["firstName"] . " " . $user["lastName"];
 				?>
-				<div class="comment">
-					<img class="commentPhoto" src=<?php echo $commentPhoto; ?> height="32" width="32">
+				<div <?php if($user["email"] == $_SESSION["email"] || $owner[0]["email"] == $_SESSION["email"]) { ?>
+							class="myComment"
+					 <?php } else { ?>
+					 		class="comment"
+					 <?php }?>>
+					<div class="mask">
+						<img class="delete" id="<?php echo $comment['id'];?>" src="../res/images/events/delete.png" width="30" heigth="30">
+					</div>
+					<img class="commentPhoto" src=<?php echo $commentPhoto; ?> height="32" width="32" style="object-fit:cover;">
 					<a class="commentUser"><?php echo $userName; ?></a>
 					<a class="commentText"><?php echo $comment["commentText"]; ?></a>
 				</div>
@@ -274,29 +277,13 @@ if(!isset($_GET["eventId"])) {
 
 		</body>
 
-		<footer>
-    		<div class="title" id="cont">
-      			<a href="../index.php"><img src="../res/images/home.png" height="50" width="50"></a>
-      			<a target="_blank" href="https://github.com/pedrofraga05/LTW-FEUP/tree/master/Social%20Network"><img src="../res/images/git.png" height="50" width="50"></a>
-      			<a href="../about.html"><img src="../res/images/info.png" height="50" width="50"></a>
-    		</div>
-
-    		<div class="buttons" id="cont">
-      			<a href="../index.php">HOME</a>
-      			<a>|</a>
-      			<a target="_blank" href="https://github.com/pedrofraga/LTW-FEUP/tree/master/Social%20Network">SOURCE</a>
-      			<a>|</a>
-      			<a href="../about.html">ABOUT</a>
-    		</div>
-
-  		</footer>
-
   		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
   		<script src="../libs/dropdown.js"></script>
   		<script src="eventScript.js"></script>
   		<script src="searchScript.js"></script>
   		<script src="updEventScript.js"></script>
+  		<script src="updatePic.js"></script>
   		
 		<!--using sweet alert-->
  		<script src="../sweetalert/dist/sweetalert.min.js"></script> <link rel="stylesheet" type="text/css" href="../sweetalert/dist/sweetalert.css">

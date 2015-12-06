@@ -35,13 +35,6 @@ if(!isset($_SESSION["email"])) {
 
 					<input type="text" name="description" id="eventTextBox" placeholder="Say something about a new event..." autocomplete="off"/>
 					
-					<div id="privacy-dd" class="dropdown-div" tabindex="1">
-						<span id="privacy-span" name="privacySpan" >Public</span>
-						<ul class="dropdown">
-							<li><a href="#">Private</a></li>
-							<li><a href="#">Public</a></li>
-						</ul>
-					</div>
 
 					<div id="type-dd" class="dropdown-div" tabindex="1">
 						<span id="type-span" name="typeSpan">Type</span>
@@ -97,6 +90,11 @@ if(!isset($_SESSION["email"])) {
 						$goValue = "Don't Go";
 					}
 
+					$ownerCmd = "SELECT * FROM owner WHERE email = '" . $_SESSION["email"] . "' AND eventId = " . $row["id"];
+					$ownerStmt = $db->prepare($ownerCmd);
+					$ownerStmt->execute();
+					$ownerResult = $ownerStmt->fetchAll();
+
 					switch($row["type"]) {
 						case "Party":
 						$path = "../res/images/events/party.png";
@@ -148,8 +146,17 @@ if(!isset($_SESSION["email"])) {
 
 			<div class="event" id ="<?php echo $id ?>">
 					<form action = "../pages/event.php" class="background" style="background-image: url(<?php echo $imagePath ?>);">
-                        <button type="submit" class="details" name="eventId" value="<?php echo $id ?>">More Details</button>
-						<input type="button" class="going" value="<?php echo $goValue ?>">
+						<?php
+						if (empty($ownerResult)) { ?>
+                        	<button type="submit" class="details" name="eventId" value="<?php echo $id ?>" style="width: 50%;height: 100%;">More Details</button>
+							<input type="button" class="going" value="<?php echo $goValue ?>" style="width: 50%;height: 100%;">
+						<?php
+						} else { 
+						?>
+							<button type="submit" class="details" name="eventId" value="<?php echo $id ?>"style="width: 100%;height: 100%;">Details and Edition</button>
+						<?php
+						} 
+						?>
 					</form>
 
 					<p><img class="icon" src=<?php echo $path ?> height="64" width="64">
@@ -169,7 +176,10 @@ if(!isset($_SESSION["email"])) {
 						<a> <?php echo $row["description"]; ?> </a>
 					</div>
 					<?php 
-						if (empty($goingResult)) {
+						if (!empty($ownerResult)) { ?>
+						<h1 class = "status">Hosting</h1>
+					<?php
+						} else if (empty($goingResult)) {
 							?><h1 class = "status">Not Going</h1><?php
 						} else {
 							?><h1 class = "status">Going</h1><?php
@@ -205,6 +215,7 @@ if(!isset($_SESSION["email"])) {
   		<script src="feedScript.js"></script>
   		<script src="searchScript.js"></script>
   		<script src="crtEventScript.js"></script>
+  		<script src="updatePic.js"></script>
   		
 		<!--using sweet alert-->
  		<script src="../sweetalert/dist/sweetalert.min.js"></script> <link rel="stylesheet" type="text/css" href="../sweetalert/dist/sweetalert.css">

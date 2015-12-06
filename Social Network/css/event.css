@@ -119,8 +119,9 @@ header{
 	margin-left: 15%;
     text-indent: 20px;
     background-image: url("../res/images/search.png");
-    background-size: 20px 20px;
+    background-size: 18px 18px;
     background-repeat: no-repeat;
+    background-position: 3% 45%;
     text-indent: 30px;
 
     border: 1px solid gray;
@@ -135,6 +136,84 @@ header{
 
 	width: 200px;
 	height: 25px;
+}
+
+#loutForm .dropdown {
+  /* Size & position */
+    position: absolute;
+    top: 75%;
+    left: 85%;
+    right: 95%;
+
+    width: 11%;
+    
+
+    /* Styles */
+    background: white;
+    border-radius: inherit;
+    border: 1px solid rgba(0,0,0,0.17);
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    font-weight: normal;
+    transition: all 0.3s ease-in;
+    list-style: none;
+
+    /* Hiding */
+    opacity: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+
+#loutForm .dropdown li span {
+    padding: 3px;
+    padding-left: 13%;
+    text-decoration: none;
+    color: #5E5951;
+    transition: all 0.2s ease-out;
+}
+
+#loutForm .dropdown li div img {
+    vertical-align: middle;
+    margin: 7px;
+    margin-left: 10px;
+}
+
+#loutForm .arrow {
+    vertical-align: middle;
+    padding-left: 5px;
+}
+
+
+
+/* Hover state */
+
+#loutForm .dropdown li:hover div {
+    background: rgba(0,105,26,0.5);
+    cursor:pointer;
+}
+
+
+#loutForm .dropdown:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    right: 15px;
+    border-width: 0 6px 6px 6px;
+    border-style: solid;
+    border-color: #fff transparent;    
+}
+
+#loutForm .dropdown:before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    right: 13px;
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.1) transparent;    
 }
 
 
@@ -152,7 +231,12 @@ header{
 
 #user {
 	font-size: 15px;
-	color: #6AE368;
+	color: gray;
+    transition: all 0.3s ease-in;
+}
+
+#loutForm:hover #user {
+    color: white;
 }
 
 
@@ -191,7 +275,7 @@ header h1 a{
 
 
 body {
-	background-color:#606060;
+	background-color:#333333;
 }
 
 
@@ -205,16 +289,22 @@ body {
 }
 
 .eventTitle {
-	background-color: #ddddff;
+	background-image: linear-gradient(
+   	to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(64, 64, 64, 0) 100%
+);
 
-	margin-top:2%;
 	margin-bottom: 0px;
 
-	border: 1px solid gray;
-	border-radius: 5px 5px 5px 5px;
-	-moz-border-radius: 5px 5px 5px 5px;
-	-webkit-border-radius: 5px 5px 5px 5px;
 }
+
+.eventTitle a {
+	color: white;
+	font-family: Dosis;
+	font-size: 50px;
+}	
 
 .icon {
 	margin: 2%;
@@ -422,10 +512,11 @@ body {
 }
 
 .background {
+
 	height: 300px;
 	margin: auto;
 
-	margin-top:0;
+	margin-top:30px;
 	margin-bottom: 0px;
 
 	border: 1px solid gray;
@@ -451,21 +542,19 @@ body {
 	width: 30%;
 	margin-left: 2%;
 
-	border: 1px solid gray;
+	border: 1px solid white;
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
-
-	background-color: #ddddff;
-
-	-webkit-box-shadow: 0 -5px 30px 1px #000000;
-	-moz-box-shadow: 0 -5px 30px 1px #000000;
-	box-shadow: 0 -5px 30px 1px #000000;
 
 	padding: 3%;
 
 	display: inline-block;
 
+}
+
+.topmiddle .eventDate a {
+	color:white;
 }
 
 .topmiddle .eventAttendance {
@@ -474,16 +563,10 @@ body {
 
 	float: right;
 
-	border: 1px solid gray;
+	border: 1px solid white;
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
-
-	background-color: #ddddff;
-
-	-webkit-box-shadow: 0 -5px 30px 1px #000000;
-	-moz-box-shadow: 0 -5px 30px 1px #000000;
-	box-shadow: 0 -5px 30px 1px #000000;
 
 	padding: 3%;
 
@@ -539,16 +622,11 @@ body {
 .middle .ownerInfo {
 	width: 40%;
 	margin-left: 0;
-	border: 1px solid gray;
+	border: 1px solid white;
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
 
-	background-color: #ddddff;
-
-	-webkit-box-shadow: 0 -5px 30px 1px #000000;
-	-moz-box-shadow: 0 -5px 30px 1px #000000;
-	box-shadow: 0 -5px 30px 1px #000000;
 	padding: 1%;
 	display:inline-block;
 }
@@ -556,23 +634,28 @@ body {
 .middle .attendanceInfo {
 	width: 40%;
 	margin-left: 0;
-	border: 1px solid gray;
+	border: 1px solid white;
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
 
-	background-color: #ddddff;
-
-	-webkit-box-shadow: 0 -5px 30px 1px #000000;
-	-moz-box-shadow: 0 -5px 30px 1px #000000;
-	box-shadow: 0 -5px 30px 1px #000000;
 	padding: 1%;
 	display:inline-block;
 	float:right;
 }
 
-.middle .attendanceInfo .owner a {
-	font-size: 20px;
+.middle .attendanceInfo .owner .number {
+	font-size: 40px;
+	margin-left: 5%;
+	margin-top: 4%;
+}
+.middle .attendanceInfo .owner .text {
+	font-size: 30px;
+	font-family: Dosis;
+}
+
+.middle a {
+	color: white;
 }
 
 .comments {
@@ -603,6 +686,7 @@ body {
 	padding-top:3%;
 	margin-left: 7%;
 	margin-right: 7%;
+	margin-bottom: 2%;
 }
 
 #commentTextBox {
@@ -654,8 +738,8 @@ body {
 
 .comment {
 	padding:0;
-	padding-bottom: 2%;
-	padding-top:2%;
+	padding-bottom: 3%;
+	padding-top:3%;
 	margin-left: 7%;
 	margin-right: 7%;
 }
@@ -676,43 +760,57 @@ body {
 	margin-right: 1%;
 }
 
-footer{
-	margin-top: 8%;
-	height: 150px;
-	background-color: #181818;
-	-webkit-box-shadow: 0 -5px 30px 1px #000000;
-	box-shadow: 0 -5px 30px 1px #000000;
+
+
+.myComment {
+	padding:0;
+	padding-bottom: 3%;
+	padding-top:3%;
+	margin-left: 7%;
+	margin-right: 7%;
+	position: relative;
 }
 
-footer .title{
-	text-align: center;
-	padding-top:30px;
+.myComment .commentPhoto {
+	vertical-align: middle;
+	border: solid 2px white;
 }
 
-footer .title a{
-	font-size: 18px;
-	padding-left: 20px;
-	padding-right:20px;
-	font-family: 'Montserrat', sans-serif;
+.myComment .commentUser {
+	margin-left: 1%;
+	color: #3a5a41;
 }
 
-footer .buttons{
-	text-align: center;
-	padding-bottom:30px;
+.myComment .commentText {
+	margin-left: 1%;
+	color: black;
+	margin-right: 1%;
 }
 
-footer .buttons a{
-	font-family: 'Montserrat', sans-serif;
-	font-size: 12px;
-	padding-left: 10px;
-	padding-right:10px;
-	text-decoration: none;
-	color:black;
+.myComment:hover .mask {
+	display: block;
+	transition: all 0.2s ease-out;
 }
 
-footer .buttons a:visited{
-	color:black;
+.mask {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0, 0.5);
+	transition: all 0.3s ease-in;
+	margin-top: -4%;
 }
+
+.mask img {
+	float: right;
+	margin: 1%;
+}
+
+.mask img:hover {
+	cursor:pointer;
+}
+
 
 
 .dropdown-div {
@@ -830,4 +928,8 @@ footer .buttons a:visited{
     opacity: 1;
     pointer-events: auto;
     z-index: 1;
+}
+
+.photos {
+	margin: 4%;
 }

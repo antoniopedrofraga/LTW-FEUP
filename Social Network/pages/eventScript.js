@@ -18,8 +18,8 @@ $(document).ready(function(){
 
 });
 
-var pdd = new DropDown( $('#privacy-dd') );
 var tdd = new DropDown( $('#type-dd') );
+var udd = new DropDown( $('#user-dd') );
 
 $('.privacy-div').on('click', function(event){
       $('.dropdown-div').removeClass('active');
@@ -116,7 +116,7 @@ $('#eventBack').on('click', function(event){
 
  	$("#dgo").css({
  		'box-shadow' : '0 0 10px 2px #6AE368',
- 		'color' : '#6AE368',
+ 		'color' : '#467373',
  		'border' : 'solid 1px #6AE368'
  	});
 
@@ -130,7 +130,7 @@ $('#eventBack').on('click', function(event){
  function styleGo() {
  	$("#go").css({
  		'box-shadow' : '0 0 10px 2px #6AE368',
- 		'color' : '#6AE368',
+ 		'color' : '#467373',
  		'border' : 'solid 1px #6AE368'
  	});
 
@@ -286,5 +286,44 @@ function styleEditEvent() {
    $('#event-hour').val(time);
 
 }
+
+$('#loutForm').hover(function(){
+    $('#user-dd').css({
+      'opacity' : '1',
+      'pointer-events' : 'auto',
+      'z-index' : '1'
+   });
+}, function(){
+    $('#user-dd').css({
+      'opacity' : '0',
+      'pointer-events' : 'none',
+      'z-index' : '1'
+   });
+})
+
+$('.delete').on('click', function(event){
+
+   var id = $(this).attr('id');
+
+
+   var fd = new FormData();
+
+   fd.append("id", id);
+
+   $.ajax({
+      url: '../actions/removeComment.php',
+      data: fd,
+      contentType: false,
+      processData: false,
+      type: 'POST',
+      success: function(data){
+         if(data == 'true') {
+            location.reload();
+         } else {
+            swal("Oops...", data, "error");
+         }
+      }
+   });
+});
 
 

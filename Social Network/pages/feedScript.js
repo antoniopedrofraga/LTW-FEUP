@@ -1,5 +1,6 @@
 var pdd = new DropDown( $('#privacy-dd') );
 var tdd = new DropDown( $('#type-dd') );
+var udd = new DropDown( $('#user-dd') );
 
 $('.privacy-div').on('click', function(event){
 		$('.dropdown-div').removeClass('active');
@@ -20,7 +21,7 @@ $(function() {
 
 
 
- $('.going').on('click', function(event){
+$('.going').on('click', function(event){
  	var status = $(this).parent().parent().find($('h1.status'));
 
  	var eventId = parseFloat($(this).parent().parent().attr('id'));
@@ -55,7 +56,19 @@ $(function() {
 });
 
 
-
+$('#loutForm').hover(function(){
+    $('#user-dd').css({
+ 		'opacity' : '1',
+ 		'pointer-events' : 'auto',
+ 		'z-index' : '1'
+   });
+}, function(){
+    $('#user-dd').css({
+ 		'opacity' : '0',
+ 		'pointer-events' : 'none',
+ 		'z-index' : '1'
+   });
+});
 
 
 
