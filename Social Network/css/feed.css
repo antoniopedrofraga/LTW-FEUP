@@ -720,9 +720,9 @@ footer .buttons a{
 	padding-left: 10px;
 	padding-right:10px;
 	text-decoration: none;
-	color:black;
+	color:gray;
 }
 
 footer .buttons a:visited{
-	color:black;
+	color:gray;
 }

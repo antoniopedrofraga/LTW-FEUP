@@ -8,11 +8,19 @@ CREATE TABLE user (
 	password VARCHAR
 );
 
-INSERT INTO user VALUES (NULL, 'Abel', 'Tiago', 'default-user.png', 'abelito@gmail.com', '1234');
+INSERT INTO user VALUES (NULL, 'Abel', 'Tiago', 'vileda.jpg', 'abelito@gmail.com', '1234');
 
-INSERT INTO user VALUES (NULL, 'Pedro', 'Fraga', 'default-user.png', 'antoniopedrofraga@gmail.com', '1234');
+INSERT INTO user VALUES (NULL, 'Pedro', 'Fraga', 'fraga.jpg', 'antoniopedrofraga@gmail.com', '1234');
 
-INSERT INTO user VALUES (NULL, 'Filipa', 'Barroso', 'default-user.png', 'pipinha@gmail.com', '1234');
+INSERT INTO user VALUES (NULL, 'Filipa', 'Barroso', 'jules.jpg', 'pipinha@gmail.com', '1234');
+
+INSERT INTO user VALUES (NULL, 'Luisa', 'Silva', 'luisa.jpg', 'luisa@gmail.com', '1234');
+
+INSERT INTO user VALUES (NULL, 'Joana', 'Pereira', 'joana.jpg', 'joana@gmail.com', '1234');
+
+INSERT INTO user VALUES (NULL, 'Jose', 'Camacho', 'ze.jpg', 'ze@gmail.com', '1234');
+
+INSERT INTO user VALUES (NULL, 'Joao', 'Martins', 'joao.jpg', 'joao@gmail.com', '1234');
 
 
 CREATE TABLE event (
@@ -42,9 +50,33 @@ CREATE TABLE attendance (
 );
 
 INSERT INTO attendance VALUES ('antoniopedrofraga@gmail.com', 1);
-INSERT INTO attendance VALUES ('antoniopedrofraga@gmail.com', 2);
+INSERT INTO attendance VALUES ('ze@gmail.com', 1);
+INSERT INTO attendance VALUES ('luisa@gmail.com', 1);
+INSERT INTO attendance VALUES ('pipinha@gmail.com', 1);
+INSERT INTO attendance VALUES ('joao@gmail.com', 1);
+INSERT INTO attendance VALUES ('joana@gmail.com', 1);
+
+INSERT INTO attendance VALUES ('antoniopedrofraga@gmail.com', 0);
+INSERT INTO attendance VALUES ('ze@gmail.com', 0);
+INSERT INTO attendance VALUES ('luisa@gmail.com', 0);
+INSERT INTO attendance VALUES ('joao@gmail.com', 0);
+INSERT INTO attendance VALUES ('joana@gmail.com', 0);
+INSERT INTO attendance VALUES ('abelito@gmail.com', 0);
 
 
+INSERT INTO attendance VALUES ('ze@gmail.com', 3);
+INSERT INTO attendance VALUES ('luisa@gmail.com', 3);
+INSERT INTO attendance VALUES ('pipinha@gmail.com', 3);
+INSERT INTO attendance VALUES ('joao@gmail.com', 3);
+INSERT INTO attendance VALUES ('joana@gmail.com', 3);
+INSERT INTO attendance VALUES ('abelito@gmail.com', 3);
+
+INSERT INTO attendance VALUES ('ze@gmail.com', 2);
+INSERT INTO attendance VALUES ('luisa@gmail.com', 2);
+INSERT INTO attendance VALUES ('pipinha@gmail.com', 2);
+INSERT INTO attendance VALUES ('joao@gmail.com', 2);
+INSERT INTO attendance VALUES ('joana@gmail.com', 2);
+INSERT INTO attendance VALUES ('abelito@gmail.com', 2);
 
 
 CREATE TABLE comment (
@@ -57,6 +89,21 @@ CREATE TABLE comment (
 
 INSERT INTO comment VALUES (NULL, 'antoniopedrofraga@gmail.com', 1, 'Great, can not wait!');
 INSERT INTO comment VALUES (NULL, 'antoniopedrofraga@gmail.com', 1, 'Best event ever!');
+INSERT INTO comment VALUES (NULL, 'joana@gmail.com', 1, 'Niiiice!');
+INSERT INTO comment VALUES (NULL, 'ze@gmail.com', 1, 'Good party!');
+
+
+INSERT INTO comment VALUES (NULL, 'luisa@gmail.com', 0, 'Nice music...');
+INSERT INTO comment VALUES (NULL, 'joao@gmail.com', 0, 'OMG, a U2 concert!');
+
+INSERT INTO comment VALUES (NULL, 'pipinha@gmail.com', 2, 'Mourinho is the best manager in the world.');
+INSERT INTO comment VALUES (NULL, 'abelito@gmail.com', 2, 'Chelsea it is not so great.');
+
+
+INSERT INTO comment VALUES (NULL, 'luisa@gmail.com', 3, 'We need to work Pedro!');
+INSERT INTO comment VALUES (NULL, 'ze@gmail.com', 3, 'This work it is not easy..');
+INSERT INTO comment VALUES (NULL, 'joana@gmail.com', 3, 'I forgot :(');
+
 
 
 CREATE TABLE owner (
@@ -66,8 +113,8 @@ CREATE TABLE owner (
 );
 
 
-INSERT INTO owner VALUES ('antoniopedrofraga@gmail.com', 1);
-INSERT INTO owner VALUES ('antoniopedrofraga@gmail.com', 2);
-INSERT INTO owner VALUES ('pipinha@gmail.com', 3);
-INSERT INTO owner VALUES ('abelito@gmail.com', 4);
+INSERT INTO owner VALUES ('antoniopedrofraga@gmail.com', 3);
+INSERT INTO owner VALUES ('antoniopedrofraga@gmail.com', 4);
+INSERT INTO owner VALUES ('pipinha@gmail.com', 1);
+INSERT INTO owner VALUES ('abelito@gmail.com', 2);
 

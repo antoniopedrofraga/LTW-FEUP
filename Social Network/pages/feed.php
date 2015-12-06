@@ -196,15 +196,12 @@ if(!isset($_SESSION["email"])) {
     		<div class="title" id="cont">
       			<a href="../index.php"><img src="../res/images/home.png" height="50" width="50"></a>
       			<a target="_blank" href="https://github.com/pedrofraga05/LTW-FEUP/tree/master/Social%20Network"><img src="../res/images/git.png" height="50" width="50"></a>
-      			<a href="../about.html"><img src="../res/images/info.png" height="50" width="50"></a>
     		</div>
 
     		<div class="buttons" id="cont">
       			<a href="../index.php">HOME</a>
       			<a>|</a>
       			<a target="_blank" href="https://github.com/pedrofraga/LTW-FEUP/tree/master/Social%20Network">SOURCE</a>
-      			<a>|</a>
-      			<a href="../about.html">ABOUT</a>
     		</div>
 
   		</footer>

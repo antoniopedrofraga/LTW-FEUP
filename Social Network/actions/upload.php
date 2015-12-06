@@ -1,5 +1,5 @@
 <?php
-$target_dir = "C:\Users\Pedro\Documents\GitHub\LTW-FEUP\Social Network\upload" . DIRECTORY_SEPARATOR;
+$target_dir = ".." . DIRECTORY_SEPARATOR . "upload" . DIRECTORY_SEPARATOR;
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $repeated = 0;

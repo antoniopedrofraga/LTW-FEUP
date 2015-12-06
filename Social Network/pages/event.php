@@ -223,7 +223,6 @@ if(!isset($_GET["eventId"])) {
 				</div>
 				<div class="attendanceInfo">
 				</div>
-				<a href="profile.php?id=3" style="color: white">Filipa Barroso</a>
 			</div>
 
 			<div class="comments">

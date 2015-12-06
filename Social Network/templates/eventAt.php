@@ -25,13 +25,17 @@ echo "<a class=\"number\" >" . $atNumber . "</a>";
 echo "<a class=\"text\" > going</a>";
 echo "</div>";
 
+$it = 0;
 foreach($at as $attendance) {
-	$userCmd = "SELECT * FROM user WHERE email = '" . $attendance["email"] . "'";
-	$userStmt = $db->prepare($userCmd);
-	$userStmt->execute();
-	$user = $userStmt->fetchAll();
-	$user = $user[0];
-	echo "<img href='/profile.php?id=" . $user['id'] ."' src='../upload/" . $user['photoPath'] . "' width ='50' height='50' style='display: inline-block;'>";
+	if($it < 5) {
+		$it++;
+		$userCmd = "SELECT * FROM user WHERE email = '" . $attendance["email"] . "'";
+		$userStmt = $db->prepare($userCmd);
+		$userStmt->execute();
+		$user = $userStmt->fetchAll();
+		$user = $user[0];
+		echo "<img class='goingImg' href='/profile.php?id=" . $user['id'] ."' src='../upload/" . $user['photoPath'] . "' width ='50' height='50' style='display: inline-block; object-fit: cover;'>";
+	}
 }
 
 ?>

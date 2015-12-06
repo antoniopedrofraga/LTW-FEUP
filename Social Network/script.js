@@ -67,6 +67,16 @@ document.getElementById('signup').onclick = function() {
          return false;
    }
 
+   if(!validateEmail(email)) {
+      swal("Oops...", "Please insert a valid e-mail...", "error");
+      return false;
+   }
+
+   if(checkPassStrength("") == "") {
+      swal("Oops...", "Please insert a stronger password...", "error");
+      return;
+   }
+
    var script = $.post("./actions/getUsers.php", {email: email.value, password: password.value});
 
    script.done(function(data) {
@@ -134,3 +144,104 @@ function User(firstName, lastName, email, password) {
 }
 
 
+function validateEmail(email) {
+    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    return re.test(email);
+}
+
+
+function checkPassStrength(pass) {
+    var score = scorePassword(pass);
+    if (score > 60)
+        return "strong";
+    if (score > 30)
+        return "good";
+    if (score >= 15)
+        return "weak";
+
+    return "";
+}
+
+
+
+function scorePassword(pass) {
+    var score = 0;
+    if (!pass)
+        return score;
+
+    // award every unique letter until 5 repetitions
+    var letters = new Object();
+    for (var i=0; i<pass.length; i++) {
+        letters[pass[i]] = (letters[pass[i]] || 0) + 1;
+        score += 5.0 / letters[pass[i]];
+    }
+
+    // bonus points for mixing it up
+    var variations = {
+        digits: /\d/.test(pass),
+        lower: /[a-z]/.test(pass),
+        upper: /[A-Z]/.test(pass),
+        nonWords: /\W/.test(pass),
+    }
+
+    variationCount = 0;
+    for (var check in variations) {
+        variationCount += (variations[check] == true) ? 1 : 0;
+    }
+    score += (variationCount - 1) * 10;
+
+    return parseInt(score);
+}
+
+
+$('#password').keyup(function() {
+   var password = $(this).val();
+   var strength = checkPassStrength(password);
+
+   if(password == "") {
+      onOk(document.getElementById("password"));
+   } else if (strength == "") {
+      $(this).css({
+      'border' : '2px solid red'
+       });
+   } else if (strength == "weak") {
+      $(this).css({
+      'border' : '2px solid #FF6600'
+       });
+   } else if (strength == "good") {
+      $(this).css({
+      'border' : '2px solid yellow'
+       });
+   } else if (strength == "strong") {
+      $(this).css({
+      'border' : '2px solid green'
+       });
+   }
+});
+
+
+$('#repeatPassword').keyup(function() {
+   var password = $(this).val();
+   var strength = checkPassStrength(password);
+
+
+   if(password == "") {
+      onOk(document.getElementById("password"));
+   } else if (strength == "") {
+      $(this).css({
+      'border' : '2px solid red'
+       });
+   } else if (strength == "weak") {
+      $(this).css({
+      'border' : '2px solid #FF3300'
+       });
+   } else if (strength == "good") {
+      $(this).css({
+      'border' : '2px solid yellow'
+       });
+   } else if (strength == "strong") {
+      $(this).css({
+      'border' : '2px solid green'
+       });
+   }
+});

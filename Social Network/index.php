@@ -57,7 +57,7 @@ if(isset($_SESSION["email"])) {
           						<input type="text" class="signupTextBox" id="firstName" size="25" placeholder="First Name" class="sidebyside"/>
           						<input type="text" class="signupTextBox" id="lastName" size="25" placeholder="Last Name" class="sidebyside"/><br /><br />
           						<input type="text" class="signupTextBox" name="email" id="email" size="25" placeholder="E-mail" /> <br /><br />
-         				  		<input type="password" class="signupTextBox" name="password" id="password" size="25" placeholder="Password" /> <br />
+         				  		<input type="password" class="signupTextBox" name="password" id="password" size="25" placeholder="Password" /><br />
           						<input type="password" class="signupTextBox" id="repeatPassword" size="25" placeholder="Repeat your password" /><br /> <br />
      					 		    <input type="submit" name="SignUp" value="Sign Up" id="signup">
        						</form>
@@ -72,21 +72,19 @@ if(isset($_SESSION["email"])) {
     <div class="title" id="cont">
       <a href="./index.php"><img src="./res/images/home.png" height="50" width="50"></a>
       <a target="_blank" href="https://github.com/pedrofraga05/LTW-FEUP/tree/master/Social%20Network"><img src="./res/images/git.png" height="50" width="50"></a>
-      <a href="./about.html"><img src="./res/images/info.png" height="50" width="50"></a>
     </div>
 
     <div class="buttons" id="cont">
       <a href="./index.php">HOME</a>
       <a>|</a>
       <a target="_blank" href="https://github.com/pedrofraga/LTW-FEUP/tree/master/Social%20Network">SOURCE</a>
-      <a>|</a>
-      <a href="./about.html">ABOUT</a>
     </div>
 
   </footer>
 
-  <script type="text/javascript" src="script.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+  <script type="text/javascript" src="script.js"></script>
   
   <!--using sweet alert-->
   <script src="./sweetalert/dist/sweetalert.min.js"></script> <link rel="stylesheet" type="text/css" href="./sweetalert/dist/sweetalert.css">
