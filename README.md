@@ -5,7 +5,7 @@
 
 1. [Introduction] (#introduction)
 2. [Developers] (#developers)
-3. [Screen Shots] (#screen-shots)
+3. [Screenshots] (#screenshots)
 
 ***
 
@@ -22,4 +22,4 @@ making use of the right [JavaScript](https://wikipedia.org/wiki/JavaScript) and 
 * Filipa Barroso
 * Pedro Fraga
 
-### Screen Shots
+### Screenshots
