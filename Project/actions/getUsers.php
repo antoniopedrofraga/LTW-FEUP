@@ -14,7 +14,7 @@ $email = $_POST["email"];
 $password = $_POST["password"];
 	
 foreach( $result as $row ) {
-	if($row["email"] == $email && password_verify($password, $row["password"])) {
+	if($row["email"] == $email && hash('sha256',$password) == $row["password"]) {
 		echo 'true';
 		return;
 	}

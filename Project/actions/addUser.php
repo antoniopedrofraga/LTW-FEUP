@@ -15,7 +15,7 @@ $password = htmlentities($_POST["password"]);
 $photoPath = "default-user.png";
 
 
-$hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+$hashedPassword = hash('sha256' ,$password);
 
 try {
   	$stmt = $db->prepare('INSERT INTO user (firstName, lastName, photoPath, email, password) VALUES (?, ?, ?, ?, ?)');
