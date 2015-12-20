@@ -23,3 +23,12 @@ making use of the right [JavaScript](https://wikipedia.org/wiki/JavaScript) and 
 * Pedro Fraga
 
 ### Screenshots
+
+###### Initial Page
+![Screenshot1](https://raw.githubusercontent.com/pedrofraga/LTW-FEUP/master/Screenshots/Screenshot_1.png?token=AHlCcYt3joYZ1yD-MHfqlQVL-gVTPkTVks5WgDOowA%3D%3D)
+
+###### Events Feed
+![Screenshot2](https://raw.githubusercontent.com/pedrofraga/LTW-FEUP/master/Screenshots/Screenshot_2.png?token=AHlCcVIRvXi3qVZYM7_OhnvtLOED4T8Wks5WgDQFwA%3D%3D)
+
+###### Profiles
+![Screenshot3](https://raw.githubusercontent.com/pedrofraga/LTW-FEUP/master/Screenshots/Screenshot_3.png?token=AHlCcTFwq3FmKnlXqcpXLEOMMYtFAQmdks5WgDTZwA%3D%3D)
